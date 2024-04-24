@@ -1,9 +1,16 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import useFetch from './useFetch';
 
 type Data = {
   answerName: string;
   ipAddress: string;
 };
+
+interface LocationResponse {
+  city: string;
+  country: string;
+  // Add other properties as needed
+}
 
 export default async function handler(
   req: NextApiRequest,
@@ -21,10 +28,21 @@ export default async function handler(
     // Your WordPress REST API endpoint
     const apiUrl = 'https://test.experimentalapp.xyz/wp-json/wp/v2/submit-poll';
 
+    const locationRes = await fetch(
+      `https://ipinfo.io/${ipAddress}?token=${process.env.IPINFO_IO_TOKEN}`
+    );
+
+    const locationData = (await locationRes.json()) as LocationResponse;
+
+    const city = locationData.city;
+    const country = locationData.country;
+
     // Prepare the data to be sent to WordPress
     const pollData = {
       answerName,
-      ipAddress, // Include the client's IP address
+      ipAddress,
+      city,
+      country,
     };
 
     // Send the data to WordPress using fetch

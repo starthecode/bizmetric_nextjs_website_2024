@@ -20,7 +20,7 @@ export const Socials = () => {
           </a>
           <a
             href="#"
-            className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border border-[#E5E5E5] hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
+            className="text-dark hover:bg-primary hover:border-primary mr-3 flex h-8 w-8 items-center justify-center rounded-full border dark:border-white border-black hover:text-white sm:mr-4 lg:mr-3 xl:mr-4"
           >
             <svg
               width="16"
