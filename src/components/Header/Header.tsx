@@ -60,7 +60,7 @@ export const Header = ({ menus }: any) => {
   }, [scroll]);
 
   const headerClasses = `transition-colors ${
-    scroll ? 'relative z-20 bg-[#dee3eb] dark:bg-woodsmoke-950/95' : ''
+    scroll ? 'relative z-20 bg-white dark:bg-woodsmoke-950/95' : ''
   }`;
 
   return (

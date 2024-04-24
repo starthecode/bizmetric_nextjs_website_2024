@@ -41,7 +41,6 @@ export default function App({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      console.log(scrollPosition);
 
       const hideHeight = 1138; // Adjust this value based on your needs
 

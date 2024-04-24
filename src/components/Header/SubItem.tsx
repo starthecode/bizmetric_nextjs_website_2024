@@ -10,8 +10,6 @@ import Link from 'next/link';
 import { useState } from 'react';
 
 const SubItem = ({ menuAcfFields, childrenItem }: any) => {
-  console.log('childrenItem', childrenItem);
-
   const SubItemVariants = {
     hidden: {
       x: -40,

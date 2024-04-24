@@ -153,7 +153,7 @@ const Industries = ({ industries }: any) => {
                     </div>
                     <div className="-m-4 overflow-hidden p-4 sm:-mx-12 sm:px-12 md:mx-0 md:w-1/2 md:overflow-visible md:px-0">
                       <div className="relative p-5 xl:p-0 md:p-0 bg-gray-100 before:absolute before:inset-0 before:scale-x-110 before:border-y before:border-gray-200 after:absolute after:inset-0 after:scale-y-110 after:border-x after:border-gray-200 dark:bg-gray-800 dark:before:border-gray-700 dark:after:border-gray-700">
-                        <div className="relative h-auto overflow-clip py-2 sm:h-[32rem] lg:p-2">
+                        <div className="relative overflow-clip py-2 h-fit lg:p-2">
                           <div
                             data-target="panel-0"
                             className="transition duration-500 sm:px-5"
