@@ -37,9 +37,6 @@ export default async function handler(
     const city = locationData.city ? locationData.city : 'N/A';
     const country = locationData.country ? locationData.country : 'N/A';
 
-    // console.log('city', city);
-    // console.log('country', country);
-
     // Prepare the data to be sent to WordPress
     const pollData = {
       answerName,
