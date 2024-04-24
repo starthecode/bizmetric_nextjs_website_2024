@@ -8,7 +8,7 @@ type Data = {
 
 interface LocationResponse {
   city: string;
-  country: string;
+  country_name: string;
   // Add other properties as needed
 }
 
@@ -33,12 +33,12 @@ export default async function handler(
 
     if (ipAddress.length > 0) {
       const locationRes = await fetch(
-        `https://ipinfo.io/${ipAddress}?token=${process.env.IPINFO_IO_TOKEN}`
+        `http://api.ipstack.com/${ipAddress}?access_key=${process.env.IPSTACK_IO_TOKEN}`
       );
       const locationData = (await locationRes.json()) as LocationResponse;
 
       city = locationData.city;
-      country = locationData.country;
+      country = locationData.country_name;
 
       if (city.length === 0 && country.length === 0) {
         res.status(400).json({ message: 'Geo Location Not Working..' });
