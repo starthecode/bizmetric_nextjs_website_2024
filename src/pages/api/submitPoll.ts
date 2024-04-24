@@ -33,7 +33,7 @@ export default async function handler(
 
     if (ipAddress.length > 0) {
       const locationRes = await fetch(
-        `https://ipinfo.io/${ipAddress}?token=${process.env.IPINFO_IO_TOKEN}`
+        `https://ipinfo.io/49.47.68.7?token=${process.env.IPINFO_IO_TOKEN}`
       );
       const locationData = (await locationRes.json()) as LocationResponse;
 
