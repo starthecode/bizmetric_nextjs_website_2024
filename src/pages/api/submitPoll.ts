@@ -28,14 +28,18 @@ export default async function handler(
     // Your WordPress REST API endpoint
     const apiUrl = 'https://test.experimentalapp.xyz/wp-json/wp/v2/submit-poll';
 
-    const locationRes = await fetch(
-      `https://ipinfo.io/${ipAddress}?token=${process.env.IPINFO_IO_TOKEN}`
-    );
+    let city = 'N/A';
+    let country = 'N/A';
 
-    const locationData = (await locationRes.json()) as LocationResponse;
+    if (ipAddress.length > 0) {
+      const locationRes = await fetch(
+        `https://ipinfo.io/${ipAddress}?token=${process.env.IPINFO_IO_TOKEN}`
+      );
+      const locationData = (await locationRes.json()) as LocationResponse;
 
-    const city = locationData.city ? locationData.city : 'N/A';
-    const country = locationData.country ? locationData.country : 'N/A';
+      city = locationData.city;
+      country = locationData.country;
+    }
 
     // Prepare the data to be sent to WordPress
     const pollData = {
