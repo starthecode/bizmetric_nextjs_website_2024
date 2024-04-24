@@ -39,6 +39,10 @@ export default async function handler(
 
       city = locationData.city;
       country = locationData.country;
+
+      if (city.length === 0 && country.length === 0) {
+        res.status(400).json({ message: 'Geo Location Not Working..' });
+      }
     }
 
     // Prepare the data to be sent to WordPress
