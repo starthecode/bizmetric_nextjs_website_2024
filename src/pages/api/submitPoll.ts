@@ -19,11 +19,11 @@ export default async function handler(
   if (req.method === 'POST') {
     // Extract form data from the request body
     const { answerName } = req.body;
-    const ipAddress =
-      req.headers['x-real-ip'] ||
-      req.socket.localAddress ||
-      req.socket.remoteAddress ||
-      (req.socket.localAddress as any)?.socket?.remoteAddress;
+    const ipAddress = '49.47.68.7';
+    // req.headers['x-real-ip'] ||
+    // req.socket.localAddress ||
+    // req.socket.remoteAddress ||
+    // (req.socket.localAddress as any)?.socket?.remoteAddress;
 
     // Your WordPress REST API endpoint
     const apiUrl = 'https://test.experimentalapp.xyz/wp-json/wp/v2/submit-poll';
