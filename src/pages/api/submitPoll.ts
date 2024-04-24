@@ -37,8 +37,8 @@ export default async function handler(
       );
       const locationData = (await locationRes.json()) as LocationResponse;
 
-      city = locationData.city;
-      country = locationData.country_name;
+      city = locationData.city ? locationData.city : 'N/A';
+      country = locationData.country_name ? locationData.country_name : 'N/A';
     }
 
     // Prepare the data to be sent to WordPress
