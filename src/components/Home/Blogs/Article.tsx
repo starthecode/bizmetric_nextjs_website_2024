@@ -29,7 +29,7 @@ export const Article = () => {
                   />
                 </Link>
               </figure>
-              <div className="dark:border-slate-600 dark:bg-slate-700 border-jacarta-100 rounded-b-[1.25rem] border border-t-0 bg-white p-[10%]">
+              <div className="dark:border-woodsmoke-950 dark:bg-slate-700 rounded-b-[1.25rem] border border-t-0 bg-white p-[10%]">
                 <div className="mb-3 flex flex-wrap items-center space-x-1 text-xs">
                   <Link
                     href="#"

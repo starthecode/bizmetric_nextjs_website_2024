@@ -24,7 +24,7 @@ const Services = ({ services }: any) => {
               services.edges?.map((item: any, index: any) => (
                 <div
                   key={index}
-                  className="group relative flex w-[250px] mx-auto md:mx-0 lg:mx-0 justify-center h-[300px] rounded-2xl hover:shadow-md bg-zinc-50 hover:shadow-zinc-900/5 dark:bg-transparent dark:hover:shadow-black/5 transition-shadow"
+                  className="group relative flex w-[250px] mx-auto md:mx-0 lg:mx-0 justify-center h-[300px] rounded-2xl border-dashed border-[1px] border-flamingo-400/40 dark:border-junglegreen-400/40 hover:shadow-md bg-white dark:bg-woodsmoke-950/95 hover:shadow-zinc-900/5 dark:hover:shadow-black/5 transition-shadow"
                 >
                   <div className="pointer-events-none">
                     <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">

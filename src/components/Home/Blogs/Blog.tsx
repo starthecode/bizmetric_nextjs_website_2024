@@ -24,7 +24,7 @@ const Blog = () => {
             data-slick-index="0"
             aria-hidden="false"
           >
-            <div className="rounded-2xl p-0 flex items-center bg-white z-10 relative flex-col lg:gap-[50px] lg:flex-row">
+            <div className="rounded-2xl p-0 flex items-center bg-white dark:bg-woodsmoke-950 z-10 relative flex-col lg:gap-[50px] lg:flex-row">
               <Link
                 className="block self-stretch flex-1 aspect-[580/421]"
                 href="#"
@@ -41,34 +41,22 @@ const Blog = () => {
               <div className="flex-1">
                 <div className="my-[60px] mr-[50px]">
                   <div className="flex items-center mb-3">
-                    <div className="bg-gray-500 rounded-full w-[3px] h-[3px] mr-[6px]"></div>
-                    <span className="uppercase text-gray-500">
+                    <span className="uppercase text-slate-500">
                       Marketing Event
                     </span>
                   </div>
-                  <h2 className="font-bold font-inter text-lg dark:text-ebonyclay-900 leading-[30px] md:text-heading-3 mb-5">
+                  <h2 className="font-bold font-inter text-lg dark:text-white leading-[30px] md:text-heading-3 mb-5">
                     {' '}
                     How To Blow Through Capital At An Incredible Rate
                   </h2>
-                  <p className="text-text text-gray-500 mb-[44px]">
+                  <p className="text-text text-slate-400 mb-[44px]">
                     Lorem ipsum dolor sit amet consectetur adipiscing elit
                     interdum ullamcorper sed pharetra senectus donec
                     nunc.Consequat semper.
                   </p>
                   <div className="flex items-center gap-[15px]">
-                    <Image
-                      width="300"
-                      height="300"
-                      quality="100"
-                      className="h-full w-full object-cover rounded-full max-w-[55px]"
-                      src="/temp/thumbnail-4.png"
-                      alt="avatar"
-                    />
                     <div>
-                      <p className="line-clamp-2 font-bold mb-[3px] text-gray-900 text-heading-6">
-                        Jenny Wilson
-                      </p>
-                      <p className="text-sm font-bold">August 25, 2022</p>
+                      <p className="text-sm font-bold text-slate-400/90">August 25, 2022</p>
                     </div>
                   </div>
                 </div>
@@ -79,7 +67,7 @@ const Blog = () => {
             </div>
           </div>
           <div className="flex flex-col gap-5">
-            <div className="flex items-center gap-6 pb-0 border-b border-gray-200 justify-between cursor-pointer">
+            <div className="flex items-center gap-6 pb-0 border-dashed border-b-[1px] border-flamingo-400/40 dark:border-junglegreen-400/40 justify-between cursor-pointer">
               <div className="flex-1">
                 <p className="font-bold font-chivo text-[14px] md:text-heading-6 line-clamp-2 mb-[18px]">
                   Design Studios That Everyone Should Know
@@ -106,7 +94,7 @@ const Blog = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-6 pb-0 border-b border-gray-200 justify-between cursor-pointer">
+            <div className="flex items-center gap-6 pb-0 border-dashed border-b-[1px] border-flamingo-400/40 dark:border-junglegreen-400/40 justify-between cursor-pointer">
               <div className="flex-1">
                 <p className="font-bold font-chivo text-[14px] md:text-heading-6 line-clamp-2 mb-[18px]">
                   Design Studios That Everyone Should Know
@@ -133,7 +121,7 @@ const Blog = () => {
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-6 pb-0 border-b border-gray-200 justify-between cursor-pointer">
+            <div className="flex items-center gap-6 pb-0 justify-between cursor-pointer">
               <div className="flex-1">
                 <p className="font-bold font-chivo text-[14px] md:text-heading-6 line-clamp-2 mb-[18px]">
                   Design Studios That Everyone Should Know

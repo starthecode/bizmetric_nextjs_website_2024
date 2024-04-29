@@ -52,23 +52,25 @@ const SubItem = ({ menuAcfFields, childrenItem }: any) => {
                   onMouseEnter={() => handleMenuHover(item.title)}
                   // onMouseLeave={() => setIsOpen(null)}
                 >
-                  {isOpen === item.title ? (
-                    <span className="absolute top-[45px] -right-[12px] shadow-xl">
-                      <BiSolidRightArrow className="h-4 w-4 fill-white" />
-                    </span>
-                  ) : (
-                    ''
-                  )}
+                  <Link href={item.path}>
+                    {isOpen === item.title ? (
+                      <span className="absolute top-[45px] -right-[12px] shadow-xl">
+                        <BiSolidRightArrow className="h-4 w-4 fill-white" />
+                      </span>
+                    ) : (
+                      ''
+                    )}
 
-                  <span className="flex items-center gap-2 text-[1rem] text-ebonyclay-900 font-bold dark:text-white dark:hover:text-flamingo-400 group-hover:text-flamingo-400">
-                    {item.title}
-                    {/* {item.children.length > 0 && (
+                    <span className="flex items-center gap-2 text-[1rem] text-ebonyclay-900 font-bold dark:text-white dark:hover:text-flamingo-400 group-hover:text-flamingo-400">
+                      {item.title}
+                      {/* {item.children.length > 0 && (
                       <ChevronRightIcon className="h-4 w-4 dark:fill-black transition-all group:rotate-0 group:hover:rotate-180" />
                     )} */}
-                  </span>
-                  <span className="text-xs text-slate-400">
-                    {item.description}
-                  </span>
+                    </span>
+                    <span className="text-xs text-slate-400">
+                      {item.description}
+                    </span>
+                  </Link>
                   {item.children.length > 0 && (
                     <ul
                       style={{ top: item?.menuAcfFields.menuClasses | 0 }}
@@ -134,7 +136,7 @@ const SubItem = ({ menuAcfFields, childrenItem }: any) => {
                       <p className="text-ebony-900 dark:text-white">
                         {item.title}
                       </p>
-                      {item.menuAcfFields.showMenuLabel ? (
+                      {item.menuAcfFields?.showMenuLabel ? (
                         <label className=" bg-junglegreen-100/80 text-junglegreen-600 flex items-center text-xs font-medium mr-2 px-2.5 py-1 rounded-full h-5 ml-4">
                           <span>{item.menuAcfFields?.menuLabelText}</span>
                         </label>
@@ -174,7 +176,7 @@ const SubItem = ({ menuAcfFields, childrenItem }: any) => {
                       <p className="text-ebony-900 dark:text-white">
                         {item.title}
                       </p>
-                      {item.menuAcfFields.showMenuLabel ? (
+                      {item.menuAcfFields?.showMenuLabel ? (
                         <label className=" bg-junglegreen-100/80 text-junglegreen-600 flex items-center text-xs font-medium mr-2 px-2.5 py-1 rounded-full h-5 ml-4">
                           <span>{item.menuAcfFields?.menuLabelText}</span>
                         </label>

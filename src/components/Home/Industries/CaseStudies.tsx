@@ -27,10 +27,10 @@ const CaseStudies = ({ catId }: caseProps) => {
       {data && data?.length > 0 ? (
         data?.slice(0, 3).map((item: any) => (
           <div
-            className="flex items-center p-2 rounded-lg mb-5 shadow-lg bg-[#f1f8fc]"
+            className="flex items-center p-2 rounded-lg mb-5 shadow-lg bg-white dark:bg-woodsmoke-950 "
             key={item.id}
           >
-          {item?._embedded['wp:featuredmedia'] && (
+            {item?._embedded['wp:featuredmedia'] && (
               <Image
                 width="150"
                 height="150"
@@ -41,15 +41,15 @@ const CaseStudies = ({ catId }: caseProps) => {
             )}
 
             <div className="mt-0 ml-2 xl:ml-5 xl:mt-0 lg:w-1/2 lg:mt-0 ">
-              <p className="text-sm text-ebony-400">Category</p>
+              <p className="text-sm text-slate-300">Category</p>
 
-              <h1 className="block mt-2 text-sm md:text-md xl:text-lg font-semibold text-gray-800 dark:text-ebony-900">
+              <h1 className="block mt-2 text-sm md:text-md xl:text-lg font-semibold text-ebony-900 dark:text-white">
                 {item.title.rendered}
               </h1>
 
               <a
                 href="#"
-                className="flex mt-2 text-[#0284c7] text-sm no-underline hover:text-blue-400"
+                className="flex mt-2 text-flamingo-400 text-sm no-underline hover:text-blue-400"
               >
                 View Case Study
                 <svg

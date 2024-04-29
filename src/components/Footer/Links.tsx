@@ -55,7 +55,7 @@ export const Links = () => {
         <h4 className="text-dark mb-6 text-lg font-semibold">Reach Us</h4>
         <p className="text-dark mb-5 flex items-center text-sm font-medium">
           <span className="text-primary mr-3">
-            <MapPinIcon className="w-4 h-4 fill-current" />
+            <MapPinIcon className="w-4 h-4 fill-flamingo-400" />
           </span>
           <span>
             Bizmetric Partners Inc, 2241 Highway 6, Suite 120, TX 77478
@@ -63,13 +63,13 @@ export const Links = () => {
         </p>
         <p className="text-dark mb-5 flex items-center text-sm font-medium">
           <span className="text-primary mr-3">
-            <PhoneIcon className="w-4 h-4 fill-current" />
+            <PhoneIcon className="w-4 h-4 fill-flamingo-400" />
           </span>
           <span>+012 (241) 551 00</span>
         </p>
         <p className="text-dark mb-5 flex items-center text-sm font-medium">
           <span className="text-primary mr-3">
-            <EnvelopeIcon className="w-4 h-4 fill-current" />
+            <EnvelopeIcon className="w-4 h-4 fill-flamingo-400" />
           </span>
           <span>marketing@bizmetric.com</span>
         </p>
@@ -92,7 +92,7 @@ export const Links = () => {
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="currentColor"
+                  stroke="#d8703c"
                   strokeWidth="2"
                   strokeLinecap="round"
                   strokeLinejoin="round"
@@ -103,7 +103,7 @@ export const Links = () => {
                 </svg>
                 <input
                   type="email"
-                  className="form__input bg-gray-800 border pl-10 border-gray-800 text-gray-100 focus:shadow-none"
+                  className="form__input bg-gray-800 border pl-10 !border-flamingo-300 text-gray-100 focus:shadow-none"
                   placeholder="Email"
                   name="email"
                 />

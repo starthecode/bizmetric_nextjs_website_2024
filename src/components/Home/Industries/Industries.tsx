@@ -26,7 +26,7 @@ const Industries = ({ industries }: any) => {
       <section className="relative mt-24 sm:mt-24 md:mt-32 xl:mt-40">
         <div className="mx-auto px-4 sm:px-12 xl:max-w-6xl xl:px-0">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-gray-800 dark:text-white md:text-4xl xl:text-5xl">
+            <h2 className="font-inter tracking-[-0.02em] !leading-[1.2] font-extrabold text-2xl lg:text-4xl md:text-4xl text-ebonyclay-900 dark:text-white">
               Experiance our Diversified Industrial Exposure
             </h2>
             <p className="mx-auto mt-6 text-gray-700 dark:text-slate-400/70 md:w-3/4 lg:w-3/5">
@@ -40,7 +40,7 @@ const Industries = ({ industries }: any) => {
               aria-label="tabs"
               className="relative mx-auto mt-12 flex h-12 w-full
                items-center gap-x-1 overflow-hidden rounded-full border
-               border-gray-200 bg-gray-100 px-[3px] text-gray-600 dark:border-gray-700
+               border-gray-200 bg-white dark:bg-woodsmoke-950/95 px-[3px] text-gray-600 dark:border-gray-700
                dark:border-opacity-60 dark:text-gray-300 dark:shadow-none sm:w-max"
             >
               {industries.HomePage.industriesSection.map(
@@ -152,7 +152,7 @@ const Industries = ({ industries }: any) => {
                       </div>
                     </div>
                     <div className="-m-4 overflow-hidden p-4 sm:-mx-12 sm:px-12 md:mx-0 md:w-1/2 md:overflow-visible md:px-0">
-                      <div className="relative p-5 xl:p-0 md:p-0 bg-gray-100 before:absolute before:inset-0 before:scale-x-110 before:border-y before:border-gray-200 after:absolute after:inset-0 after:scale-y-110 after:border-x after:border-gray-200 dark:bg-gray-800 dark:before:border-gray-700 dark:after:border-gray-700">
+                      <div className="relative p-5 xl:p-0 md:p-0 bg-white before:absolute before:inset-0 before:scale-x-110 before:border-y before:border-flamingo-400/40 after:absolute after:inset-0 after:scale-y-110 after:border-x after:border-junglegreen-400/40 dark:bg-woodsmoke-900 dark:before:border-flamingo-400/40 dark:after:border-junglegreen-400/40">
                         <div className="relative overflow-clip py-2 h-[30rem] lg:p-2">
                           <div
                             data-target="panel-0"

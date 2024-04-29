@@ -2,7 +2,7 @@ import { ApolloProvider } from '@apollo/client';
 import { ThemeProvider } from 'next-themes';
 import '@/styles/globals.scss';
 import { Toaster } from 'react-hot-toast';
-
+import NextNProgress from 'nextjs-progressbar';
 import client from '../../client';
 import type { AppProps } from 'next/app';
 import { Header } from '@/components/Header/Header';
@@ -14,29 +14,8 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 
 export default function App({ Component, pageProps }: AppProps) {
-  // console.log(pageProps);
   const router = useRouter();
-  const [loading, setLoading] = useState(false);
   const [shouldHide, setShouldHide] = useState(false);
-
-  useEffect(() => {
-    const handleStart = () => {
-      setLoading(true);
-    };
-    const handleComplete = () => {
-      setLoading(false);
-    };
-
-    router.events.on('routeChangeStart', handleStart);
-    router.events.on('routeChangeComplete', handleComplete);
-    router.events.on('routeChangeError', handleComplete);
-
-    return () => {
-      router.events.off('routeChangeStart', handleStart);
-      router.events.off('routeChangeComplete', handleComplete);
-      router.events.off('routeChangeError', handleComplete);
-    };
-  }, [router]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -80,16 +59,17 @@ Bizmetric | Artificial Intelligence | Data Analytics | Consultancy Services Bizm
             <span className={`${shouldHide ? 'hidden' : ''}`}>
               <Poll />
             </span>
-            <span className="fixed blur-[200px] w-[600px] h-[600px] rounded-full top-1/2 -translate-y-1/2 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 bg-flamingo-600/40 dark:bg-junglegreen-400/25"></span>
+            <span className="fixed blur-[300px] w-[600px] h-[600px] rounded-full top-1/2 -translate-y-1/2 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 bg-flamingo-600/40 dark:bg-junglegreen-400/25"></span>
             <Header menus={pageProps?.data?.menuItems} />
             {pageProps?.data?.pageBy?.title != 'Home' && (
               <Breadcrumbs props={pageProps?.data?.nodeByUri} />
             )}
-            {/* {loading && (
-              <div className="loader">
-                <div className="spinner"> </div>
-              </div>
-            )} */}
+            <NextNProgress
+              color="#d8703c"
+              startPosition={0.3}
+              height={3}
+              showOnShallow={true}
+            />
             <Component {...pageProps} />{' '}
           </main>
         </ThemeProvider>

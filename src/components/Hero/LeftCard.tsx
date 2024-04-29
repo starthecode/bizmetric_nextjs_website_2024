@@ -71,7 +71,7 @@ export const LeftCard = ({ item }: any) => {
       </div>
 
       {item.services1 && item.services2 && item.services3 && (
-        <div className="flex items-center justify-center sm:justify-center md:justify-start border-t-[1px] w-full border-gray-600 pt-8 mt-8">
+        <div className="flex items-center justify-center sm:justify-center md:justify-start border-dashed border-t-[1px] w-full border-slate-400/80 pt-8 mt-8">
           <div className="w-full flex gap-5 items-center sm:text-center md:text-left 2xl:text-left 2xl:gap-10">
             <motion.div
               initial={{ opacity: 0, x: -100 }}
@@ -80,7 +80,7 @@ export const LeftCard = ({ item }: any) => {
               className={services_items}
             >
               {item.services1 && (
-                <div>
+                <div className="hover:text-flamingo-400">
                   <span>{item.services1.split(' ')[0]}</span>
                   <br />
                   <span>{item.services1.split(' ').slice(1).join(' ')}</span>
@@ -95,7 +95,7 @@ export const LeftCard = ({ item }: any) => {
               className={services_items}
             >
               {item.services2 && (
-                <div>
+                <div className="hover:text-flamingo-400">
                   <span>{item.services2.split(' ')[0]}</span>
                   <br />
                   <span>{item.services2.split(' ').slice(1).join(' ')}</span>
@@ -110,7 +110,7 @@ export const LeftCard = ({ item }: any) => {
               className={services_items}
             >
               {item.services3 && (
-                <div>
+                <div className="hover:text-flamingo-400">
                   <span>{item.services3.split(' ')[0]}</span>
                   <br />
                   <span>{item.services3.split(' ').slice(1).join(' ')}</span>

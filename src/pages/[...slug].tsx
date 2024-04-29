@@ -16,6 +16,8 @@ export default function Page({ data }: any) {
         <Contact />;
       </>
     );
+  } else if (data?.nodeByUri?.title == 'Contact Us') {
+    return <></>;
   } else {
     return '';
   }
@@ -35,13 +37,24 @@ export const getStaticProps = async (context: any) => {
             title
           }
         }
-        menuItems(where: { location: PRIMARY }, first: 20) {
+        menuItems(where: { location: PRIMARY }, first: 45) {
           nodes {
             key: id
             parentId
             title: label
             url
             path
+            description
+            menuAcfFields {
+              showMenuLabel
+              menuLabelText
+              showMegaMenu
+              showServicesMegaMenu
+              menuClasses
+              menuIcon {
+                mediaItemUrl
+              }
+            }
           }
         }
       }

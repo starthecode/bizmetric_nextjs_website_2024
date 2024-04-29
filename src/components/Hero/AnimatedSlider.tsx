@@ -5,6 +5,7 @@ import { RightCard } from './RightCard';
 import imgG from '../../assets/imgs/gradient_dark.png';
 import HeroImg from '@/assets/imgs/hero-illustration.svg';
 import Stars from './Stars';
+import Image from 'next/image';
 export const AnimatedSlider = (heroData: any) => {
   const settings = {
     dots: false,
@@ -59,9 +60,9 @@ export const AnimatedSlider = (heroData: any) => {
           )}
         </Slider>
       </div>
-      {/* <picture className="pointer-events-none absolute -right-0 top-[50%] -z-10 hidden dark:block">
+      <picture className="pointer-events-none absolute -right-0 top-[50%] -z-10 hidden dark:block">
         <Image priority={true} alt="" width="350" height="350" src={imgG} />
-      </picture> */}
+      </picture>
     </section>
   );
 };

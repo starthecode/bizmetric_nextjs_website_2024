@@ -20,7 +20,7 @@ export const Text = ({ small, main }: any) => {
                 {small}
               </span>
             </h2>
-            <h2 className="text-dark mt-3 mb-4 text-3xl font-bold sm:text-4xl md:text-[40px]">
+            <h2 className="mt-3 mb-4 font-inter tracking-[-0.02em] !leading-[1.2] font-extrabold text-2xl lg:text-4xl md:text-4xl text-ebonyclay-900 dark:text-white">
               {words.map((word: string, index: any) => (
                 <span key={index}>
                   {word}
