@@ -24,7 +24,7 @@ const Services = ({ services }: any) => {
               services.edges?.map((item: any, index: any) => (
                 <div
                   key={index}
-                  className="group relative flex w-[250px] mx-auto md:mx-0 lg:mx-0 justify-center h-[300px] rounded-2xl border-dashed border-[1px] border-flamingo-400/40 dark:border-junglegreen-400/40 hover:shadow-md bg-white dark:bg-woodsmoke-950/95 hover:shadow-zinc-900/5 dark:hover:shadow-black/5 transition-shadow"
+                  className="group relative flex w-[250px] mx-auto md:mx-0 lg:mx-0 justify-center h-[300px] rounded-2xl border-dashed border-[1px] border-flamingo-400/40 dark:border-junglegreen-400/40 hover:shadow-md bg-white dark:bg-woodsmoke-950 hover:shadow-zinc-900/5 dark:hover:shadow-black/5 transition-shadow"
                 >
                   <div className="pointer-events-none">
                     <div className="absolute inset-0 rounded-2xl transition duration-300 [mask-image:linear-gradient(white,transparent)] group-hover:opacity-50">
@@ -84,7 +84,7 @@ const Services = ({ services }: any) => {
                     >
                       <svg
                         aria-hidden="true"
-                        className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/50 stroke-black/70 dark:fill-white/2.5 dark:stroke-white/10"
+                        className="absolute inset-x-0 inset-y-[-30%] h-[160%] w-full skew-y-[-18deg] fill-black/50 stroke-black/70 dark:fill-junglegreen-700/2.5 dark:stroke-junglegreen-600"
                       >
                         <defs>
                           <pattern
@@ -123,7 +123,6 @@ const Services = ({ services }: any) => {
                       </svg>
                     </div>
                   </div>
-                  <div className="absolute inset-0 rounded-2xl ring-1 ring-inset ring-zinc-900/7.5 group-hover:ring-zinc-900/10 dark:ring-white/10 dark:group-hover:ring-white/20"></div>
                   <div className="relative top-[0%] px-4 pb-4 pt-11 transition-all duration-800 ease-out group-hover:absolute group-hover:top-[-10%]">
                     <div className="flex h-7 w-7 items-center justify-center rounded-full bg-zinc-900/5 ring-1 ring-zinc-900/25 backdrop-blur-[2px] transition duration-300 group-hover:bg-white/50 group-hover:ring-zinc-900/25 dark:bg-white/7.5 dark:ring-white/15 dark:group-hover:bg-flamingo-300/10 dark:group-hover:ring-flamingo-400">
                       {item.node.title == 'Artificial Intelligence' ? (

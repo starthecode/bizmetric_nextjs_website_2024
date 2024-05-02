@@ -8,6 +8,7 @@ const nextConfig = {
       'test.experimentalapp.xyz',
       'images.unsplash.com',
       'cdn-icons-png.flaticon.com',
+      'secure.gravatar.com',
     ],
   },
   async headers() {

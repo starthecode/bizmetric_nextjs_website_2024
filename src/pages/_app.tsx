@@ -12,6 +12,7 @@ import { UseMousePosition } from '@/components/UseMousePosition';
 import { Poll } from '@/components/Poll/Poll';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
+import { Footer } from '@/components/Footer/Footer';
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -70,7 +71,7 @@ Bizmetric | Artificial Intelligence | Data Analytics | Consultancy Services Bizm
               height={3}
               showOnShallow={true}
             />
-            <Component {...pageProps} />{' '}
+            <Component {...pageProps} /> <Footer />
           </main>
         </ThemeProvider>
       </ApolloProvider>

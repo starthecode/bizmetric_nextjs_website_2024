@@ -10,10 +10,6 @@ const CaseStudies = ({ catId }: caseProps) => {
     `wp-json/wp/v2/case_studies?casestudies_industry=${catId}&_embed&per_page=4`
   );
 
-  console.log('data', data);
-  console.log('error', error);
-  console.log('isLoading', isLoading);
-
   if (isLoading) {
     return <div>Loading...</div>;
   }

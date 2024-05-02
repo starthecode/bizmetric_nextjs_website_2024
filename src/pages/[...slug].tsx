@@ -2,24 +2,24 @@ import { gql } from '@apollo/client';
 import client from '../../client';
 
 import { Contact } from '@/components/ContactUs/Contact';
+import ParentPage from '@/components/page/ServicesPage/ParentPage';
+import Blog from '@/components/TechTalks/Blog';
+import { SinglePost } from '@/components/TechTalks/SinglePost';
 
 export default function Page({ data }: any) {
   if (data?.nodeByUri?.title == 'Blogs') {
     return (
       <>
-        <h2>This is blog page</h2>
+        <Blog />
       </>
     );
+  } else if (data?.nodeByUri?.checkPage?.checkPageField) {
+    if (data?.nodeByUri?.checkPage?.addPageField == 'services')
+      return <ParentPage />;
   } else if (data?.nodeByUri?.title == 'Contact Us') {
-    return (
-      <>
-        <Contact />;
-      </>
-    );
-  } else if (data?.nodeByUri?.title == 'Contact Us') {
-    return <></>;
+    return <Contact />;
   } else {
-    return '';
+    return <SinglePost postData={data?.nodeByUri} />;
   }
 }
 
@@ -35,6 +35,25 @@ export const getStaticProps = async (context: any) => {
           ... on Page {
             id
             title
+            excerpt
+            checkPage {
+              checkPageField
+              addPageField
+            }
+          }
+          ... on Post {
+            id
+            title
+            excerpt
+            content
+            categories {
+              nodes {
+                name
+              }
+            }
+            singleBlogFields {
+              customTextBox1
+            }
           }
         }
         menuItems(where: { location: PRIMARY }, first: 45) {
@@ -80,19 +99,48 @@ export const getStaticPaths = async () => {
             uri
           }
         }
+        posts(first: 100) {
+          nodes {
+            uri
+          }
+        }
       }
     `,
   });
 
+  // return {
+  //   paths: data?.pages?.nodes
+  //     .map((page: any) => page.uri)
+  //     .filter((uri: string) => uri !== '/')
+  //     .map((uri: string) => ({
+  //       params: {
+  //         slug: uri.split('/').filter((segment: string) => segment !== ''),
+  //       },
+  //     })),
+  //   fallback: false,
+  // };
+
+  const pagePaths = data?.pages?.nodes
+    .map((page: any) => page.uri)
+    .filter((uri: string) => uri !== '/')
+    .map((uri: string) => ({
+      params: {
+        slug: uri.split('/').filter((segment: string) => segment !== ''),
+      },
+    }));
+
+  const postPaths = data?.posts?.nodes
+    .map((post: any) => post.uri)
+    .map((uri: string) => ({
+      params: {
+        slug: uri.split('/').filter((segment: string) => segment !== ''),
+      },
+    }));
+
+  const allPaths = [...pagePaths, ...postPaths];
+
   return {
-    paths: data?.pages?.nodes
-      .map((page: any) => page.uri)
-      .filter((uri: string) => uri !== '/')
-      .map((uri: string) => ({
-        params: {
-          slug: uri.split('/').filter((segment: string) => segment !== ''),
-        },
-      })),
+    paths: allPaths,
     fallback: false,
   };
 };
