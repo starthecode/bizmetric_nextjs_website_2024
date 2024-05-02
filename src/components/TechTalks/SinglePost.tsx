@@ -10,13 +10,13 @@ export const SinglePost = ({ postData }: any) => {
   return (
     <>
       <section>
-        <div className="container">
+        <div className="container relative z-10">
           <div className="lg:w-4/5">
             <div className="flex gap-4">
               {postData.categories.nodes.map((cat: any, index: any) => (
                 <Link
                   key={index}
-                  className="bg-flamingo-500/10 text-flamingo-500 font-medium rounded-md text-xs py-1 px-2"
+                  className="badge font-medium rounded-md text-xs py-1 px-2"
                   href="#"
                 >
                   {cat.name}
