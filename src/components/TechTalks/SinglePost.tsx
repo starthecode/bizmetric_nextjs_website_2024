@@ -2,8 +2,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import Tags from '../extras/Tags';
+import { formatDate } from '@/utils/utils';
 
 export const SinglePost = ({ postData }: any) => {
+  console.log('postData', postData);
+
   return (
     <>
       <section>
@@ -27,17 +30,19 @@ export const SinglePost = ({ postData }: any) => {
           <div className="mb-8">
             <div className="flex flex-wrap items-center justify-between gap-6">
               <div className="flex items-center gap-3 mt-7">
-                <img
-                  src="https://themes.coderthemes.com/prompt_t/assets/img-1-f7888c4b.jpg"
+                <Image
+                  width={30}
+                  height={30}
+                  src={postData?.author?.node?.avatar?.url}
                   alt="avatar"
-                  className="h-11 w-11 rounded-full"
+                  className="h-auto w-auto rounded-full"
                 />
                 <div>
                   <h6 className="text-sm transition-all hover:text-primary">
-                    <a href="#">Emily Blunt</a>
+                    <a href="#">{postData?.author?.node?.name}</a>
                   </h6>
                   <p className="text-sm text-gray-500">
-                    11 Mar, 2020 · 3 min read
+                    {formatDate(postData?.date)}
                   </p>
                 </div>
               </div>

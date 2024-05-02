@@ -7,6 +7,8 @@ import Blog from '@/components/TechTalks/Blog';
 import { SinglePost } from '@/components/TechTalks/SinglePost';
 
 export default function Page({ data }: any) {
+  console.log('test', data?.nodeByUri);
+
   if (data?.nodeByUri?.title == 'Blogs') {
     return (
       <>
@@ -18,8 +20,10 @@ export default function Page({ data }: any) {
       return <ParentPage />;
   } else if (data?.nodeByUri?.title == 'Contact Us') {
     return <Contact />;
-  } else {
+  } else if (data?.nodeByUri?.__typename == 'Post') {
     return <SinglePost postData={data?.nodeByUri} />;
+  } else {
+    <>test page</>;
   }
 }
 
@@ -46,6 +50,15 @@ export const getStaticProps = async (context: any) => {
             title
             excerpt
             content
+            date
+            author {
+              node {
+                name
+                avatar {
+                  url
+                }
+              }
+            }
             categories {
               nodes {
                 name
