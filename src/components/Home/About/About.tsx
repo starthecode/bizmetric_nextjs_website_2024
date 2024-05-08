@@ -3,7 +3,6 @@ import { Button1 } from '../../Button/Button';
 import { LineSvg } from '../Headings/LineSvg';
 import { motion } from 'framer-motion';
 import { IconArrow } from '@/components/icons';
-import GLightbox from 'glightbox';
 
 const About = () => {
   return (
