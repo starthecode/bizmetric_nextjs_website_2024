@@ -123,7 +123,7 @@ const About = () => {
         </div>
       </section> */}
 
-      <section className="relative video-area video-two bg-flamingo-700/20 dark:bg-inherit pt-[100px] z-10 mt-28">
+      <section className="relative video-area video-two bg-inherit pt-[100px] z-10 mt-28">
         {/* <div className="absolute -z-1 -top-[128%] sm:-top-[107%] xl:-top-[73%] left-1/2 -translate-x-1/2 -u-z-10 hero-circle-gradient w-full h-[952px] rounded-full max-w-[935px]"></div>
         <div className="absolute -z-1 -top-[112%] sm:-top-[93%] xl:-top-[62%] left-1/2 -translate-x-1/2 -u-z-10 hero-circle-gradient w-full h-[1046px] rounded-full max-w-[1046px]"></div> */}
 
