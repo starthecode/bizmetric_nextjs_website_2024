@@ -18,6 +18,7 @@ export default function Home({ data, homePage }: any) {
 
       <Hero heroData={homePage} />
       <PartnerLogo partners={homePage} />
+
       <About />
       <Services services={data.pages} />
       <Industries industries={homePage} />
