@@ -30,11 +30,17 @@ export const Breadcrumbs = (props: any) => {
           <rect fill="url(#grid-pattern)" height="100%" width="100%"></rect>
         </svg>
       </div>
-      <div className="container relative z-10">
+      <div
+        className={`container relative z-10 ${
+          props?.props?.__typename == 'Solution'
+            ? 'flex flex-col justify-center items-center text-center'
+            : ''
+        }`}
+      >
         <div
           className={`${
             props?.props?.__typename == 'Post' ? 'hidden' : ''
-          } grid w-[40rem] mb-10`}
+          } grid w-[50rem] mb-10`}
         >
           <h1 className="text-2xl lg:text-5xl font-bold mb-5 wow animate__animated animate__fadeIn animated">
             {props?.props?.title}

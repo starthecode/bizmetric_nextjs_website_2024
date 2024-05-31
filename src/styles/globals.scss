@@ -2265,3 +2265,25 @@ li.menu__items:first-child > .main_item-ancher {
     rgba(255, 255, 255, 0) 100%
   );
 }
+
+// .swiper-pagination-bullet {
+//   @apply !bg-gray-200 dark:!bg-gray-700 !opacity-100;
+// }
+
+// .swiper-pagination-bullet-active {
+//   @apply !bg-gray-950 dark:!bg-white;
+// }
+
+@keyframes loop {
+  to {
+    offset-distance: 100%;
+  }
+}
+
+.swiper-pagination.swiper-pagination-bullets .swiper-pagination-bullet {
+  background: slategray;
+}
+
+.swiper-pagination.swiper-pagination-bullets .swiper-pagination-bullet-active {
+  background: #00a88a;
+}

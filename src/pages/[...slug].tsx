@@ -5,6 +5,7 @@ import { Contact } from '@/components/ContactUs/Contact';
 import ParentPage from '@/components/page/ServicesPage/ParentPage';
 import Blog from '@/components/TechTalks/Blog';
 import { SinglePost } from '@/components/TechTalks/SinglePost';
+import SingleSolution from '@/components/Solutions/SingleSolution';
 
 export default function Page({ data }: any) {
   console.log('test', data?.nodeByUri);
@@ -22,6 +23,8 @@ export default function Page({ data }: any) {
     return <Contact />;
   } else if (data?.nodeByUri?.__typename == 'Post') {
     return <SinglePost postData={data?.nodeByUri} />;
+  } else if (data?.nodeByUri?.__typename == 'Solution') {
+    return <SingleSolution />;
   } else {
     <>test page</>;
   }
@@ -68,6 +71,11 @@ export const getStaticProps = async (context: any) => {
               customTextBox1
             }
           }
+          ... on Solution {
+            id
+            title
+            excerpt
+          }
         }
         menuItems(where: { location: PRIMARY }, first: 45) {
           nodes {
@@ -107,12 +115,17 @@ export const getStaticPaths = async () => {
   const { data } = await client.query({
     query: gql`
       query AllPagesQuery {
-        pages(first: 100) {
+        pages(first: 500) {
           nodes {
             uri
           }
         }
-        posts(first: 100) {
+        posts(first: 1000) {
+          nodes {
+            uri
+          }
+        }
+        solutions(first: 500) {
           nodes {
             uri
           }
@@ -150,7 +163,15 @@ export const getStaticPaths = async () => {
       },
     }));
 
-  const allPaths = [...pagePaths, ...postPaths];
+  const postSolutions = data?.solutions?.nodes
+    .map((post: any) => post.uri)
+    .map((uri: string) => ({
+      params: {
+        slug: uri.split('/').filter((segment: string) => segment !== ''),
+      },
+    }));
+
+  const allPaths = [...pagePaths, ...postPaths, ...postSolutions];
 
   return {
     paths: allPaths,

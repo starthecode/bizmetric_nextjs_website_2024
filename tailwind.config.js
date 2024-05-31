@@ -10,6 +10,14 @@ module.exports = {
     './src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
+    keyframes: {
+      loop: {
+        to: {
+          'offset-distance': '100%',
+        },
+      },
+    },
+
     extend: {
       keyframes: {
         wiggle: {
