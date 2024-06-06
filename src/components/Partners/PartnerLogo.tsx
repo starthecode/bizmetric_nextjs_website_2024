@@ -41,11 +41,8 @@ export const PartnerLogo = (partners: any) => {
               className="mr-4 flex justify-center items-center
             text-center"
             >
-              <span
-                className="font-cursive rounded-full xl:text-2xl md:text-xl sm:text-base font-bold bg-gradient-to-r
-            from-formalGreenLight to-formalGreen bg-clip-text text-transparent dark:to-secondaryLight"
-              >
-                Our Partners
+              <span className="font-inter rounded-full xl:text-lg md:text-md sm:text-base font-normal text-white">
+                Trusted by companies of all sizes
               </span>
             </div>
             <div

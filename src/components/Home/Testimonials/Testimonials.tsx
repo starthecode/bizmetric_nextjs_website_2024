@@ -8,6 +8,7 @@ const Testimonials = ({ testimonials }: any) => {
         <Text
           small={'Client Testimonials'}
           main={'Learn about Our Services from Industry Leaders'}
+          classes={'font-cursive'}
         />
         <div className="marquee">
           <div className="slide">

@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import { SvgShape01 } from '../svg';
+import { DotAnimationSVG, SvgShape01 } from '../svg';
 import { IconArrow } from '../icons';
 
 const ServicesCards = () => {
@@ -47,10 +47,7 @@ const ServicesCards = () => {
                     alt="icon"
                   />
                 </div>
-                <div className="max-w-[482px] w-full h-60 overflow-hidden absolute -z-1 top-20 left-1/2 -translate-x-1/2">
-                  <div className="stars"></div>
-                  <div className="stars2"></div>
-                </div>
+                <DotAnimationSVG />
               </div>
             </div>
           </div>

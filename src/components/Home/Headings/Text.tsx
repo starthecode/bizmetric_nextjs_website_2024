@@ -1,11 +1,13 @@
 import React from 'react';
 import { LineSvg } from './LineSvg';
 
-export const Text = ({ small, main }: any) => {
+export const Text = ({ small, main, classes }: any) => {
   const words = main.split(' ');
   const wordIndexToWrap = words.length - 1;
   words[wordIndexToWrap] = (
-    <span className="font-cursive relative bg-gradient-to-r from-formalGreenLight to-formalGreen bg-clip-text text-transparent dark:to-secondaryLight">
+    <span
+      className={`${classes} relative bg-gradient-to-r from-formalGreenLight to-formalGreen bg-clip-text text-transparent dark:to-secondaryLight`}
+    >
       {words[wordIndexToWrap]}
     </span>
   );

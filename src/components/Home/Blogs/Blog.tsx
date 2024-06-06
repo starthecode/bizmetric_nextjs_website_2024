@@ -17,7 +17,11 @@ const Blog = () => {
       </section> */}
 
       <div className="relative mt-24 sm:mt-24 md:mt-32 xl:mt-40">
-        <Text small={'Our Blog'} main={'Tech Talks & News'} />
+        <Text
+          small={'Our Blog'}
+          main={'Tech Talks & News'}
+          classes={'font-cursive'}
+        />
         <div className="container block xl:flex md:flex gap-[30px] md:grid-cols-2 gap-y-[60px] lg:grid-cols-2">
           <div
             className="relative mx-0 xl:mx-5 w-full lg:ml-2 lg:mr-[30px] xl:w-[900px]"
@@ -56,7 +60,9 @@ const Blog = () => {
                   </p>
                   <div className="flex items-center gap-[15px]">
                     <div>
-                      <p className="text-sm font-bold text-slate-400/90">August 25, 2022</p>
+                      <p className="text-sm font-bold text-slate-400/90">
+                        August 25, 2022
+                      </p>
                     </div>
                   </div>
                 </div>

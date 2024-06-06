@@ -20,13 +20,14 @@ const Services = ({ services }: any) => {
         <div className="max-w-[1104px] mx-auto px-4 sm:px-8 xl:px-0">
           <div className="relative z-999 overflow-hidden rounded-[30px] bg-gradient-to-t from-white to-transparent dark:bg-gradient-to-t dark:from-woodsmoke-950 dark:to-woodsmoke-950/98 pt-25 px-4 sm:px-20 lg:px-27.5">
             <div
-              className="wow fadeInUp mb-16 text-center relative z-999"
+              className="mb-16 text-center relative z-999"
               style={{ visibility: 'visible' }}
             >
               <div className="container mx-auto">
                 <Text
                   small={'Our Services'}
                   main={'Simplifying the Digital Adoption Journey'}
+                  classes={'font-cursive'}
                 />
 
                 <ServicesCards />

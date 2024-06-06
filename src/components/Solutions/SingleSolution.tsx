@@ -29,152 +29,104 @@ import Slider from './Slider';
 //   },
 // });
 
-const SingleSolution = () => {
+export const SingleSolution = ({ postData }: any) => {
+  console.log('solutionsData', postData?.solutions_field);
   return (
     <section id="services" className="scroll-mt-17 relative pt-5">
-      <div className="mx-auto px-2 w-fit">
-        <div
-          className="wow fadeInUp mb-16 text-center relative z-999"
-          style={{ visibility: 'visible' }}
-        >
-          <div className="sm:col-span-5">
-            <div className="relative rounded-3xl border-[1px] border-woodsmoke-300/20 bg-white dark:bg-woodsmoke-950/95 z-10">
-              <div className="group relative overflow-hidden rounded-3xl p-7 box-hover-2 dark:before:bg-flamingo-500/20">
-                <div className="relative z-20 flex flex-col justify-center items-center">
-                  <iframe
-                    className="relative z-10 rounded-2xl"
-                    width="620"
-                    height="350"
-                    src="https://www.youtube-nocookie.com/embed/0DysrE4uCsk?si=MibOm7PfXvI-lfy_&amp;controls=0"
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
+      {postData?.solutions_field?.showSolutionVideo == true && (
+        <div className="mx-auto px-2 w-fit">
+          <div className="mb-16 text-center relative z-999">
+            <div className="sm:col-span-5">
+              <div className="relative rounded-3xl border-[1px] border-woodsmoke-300/20 bg-white dark:bg-woodsmoke-950/95 z-10">
+                <div className="group relative overflow-hidden rounded-3xl p-7 box-hover-2 dark:before:bg-flamingo-500/20">
+                  <div className="relative z-20 flex flex-col justify-center items-center">
+                    <iframe
+                      className="relative z-10 rounded-2xl"
+                      width="620"
+                      height="350"
+                      src={`https://www.youtube-nocookie.com/embed/${postData?.solutions_field?.solutionVideo}_&amp;controls=0`}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      )}
+
       <div className="container">
         <div className="border-[0.6px] border-woodsmoke-600/50 mb-16"></div>
-        <h1 className="mb-10 text-left font-inter tracking-[-0.02em] !leading-[1.2] font-extrabold text-2xl lg:text-4xl md:text-4xl text-ebonyclay-900 dark:text-white">
-          Stream Processing with Kafka at the{' '}
-          <span className="relative font-cursive bg-gradient-to-r from-formalGreenLight to-formalGreen bg-clip-text text-transparent dark:to-secondaryLight overflow-hidden">
-            Edge
-            <svg
-              className="absolute right-1 w-[130px]"
-              viewBox="0 0 220 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M134.66 13.107c-10.334-.37-20.721-.5-31.12-.291l-2.6.06c-4.116.04-8.193.602-12.3.749-14.502.43-29.029 1.196-43.514 2.465-6.414.63-12.808 1.629-19.04 2.866-7.93 1.579-16.113 3.71-23.367 5.003-2.211.374-3.397-1.832-2.31-4.906.5-1.467 1.838-3.456 3.418-4.813a16.047 16.047 0 0 1 6.107-3.365c16.88-4.266 33.763-6.67 51.009-7.389C71.25 3.187 81.81 1.6 92.309.966c11.53-.65 23.097-.938 34.66-.96 7.117-.054 14.25.254 21.36.318l16.194.803 4.62.39c3.85.32 7.693.618 11.53.813 8.346.883 16.673.802 25.144 2.159 1.864.276 3.714.338 5.566.873l.717.225c6.162 1.977 7.92 3.64 7.9 7.197l-.003.203c-.017.875.05 1.772-.112 2.593-.581 2.762-4.066 4.12-8.637 3.63-13.696-1.06-27.935-3.332-42.97-4.168-11.055-.83-22.314-1.459-33.596-1.603l-.022-.332Z"
-                fill="#D1D5DB"
-                fill-rule="evenodd"
-              ></path>
-            </svg>
-          </span>
-        </h1>
-        <p>
-          At Bizmetric, we’ve pioneered a robust solution for stream processing
-          with Kafka at the edge, leveraging Kubernetes for seamless deployment.
-          <br />
-          Here’s how it works:
-        </p>
+        {postData?.solutions_field?.showSolution2Content == true && (
+          <div>
+            <h1 className="mb-10 text-left font-inter tracking-[-0.02em] !leading-[1.2] font-extrabold text-2xl lg:text-4xl md:text-4xl text-ebonyclay-900 dark:text-white">
+              {postData?.solutions_field?.solutionContent2Title}{' '}
+              <span className="relative font-cursive bg-gradient-to-r from-formalGreenLight to-formalGreen bg-clip-text text-transparent dark:to-secondaryLight overflow-hidden">
+                {postData?.solutions_field?.solutionContent2TitleCursive}
+                <svg
+                  className="absolute right-1 w-[130px]"
+                  viewBox="0 0 220 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M134.66 13.107c-10.334-.37-20.721-.5-31.12-.291l-2.6.06c-4.116.04-8.193.602-12.3.749-14.502.43-29.029 1.196-43.514 2.465-6.414.63-12.808 1.629-19.04 2.866-7.93 1.579-16.113 3.71-23.367 5.003-2.211.374-3.397-1.832-2.31-4.906.5-1.467 1.838-3.456 3.418-4.813a16.047 16.047 0 0 1 6.107-3.365c16.88-4.266 33.763-6.67 51.009-7.389C71.25 3.187 81.81 1.6 92.309.966c11.53-.65 23.097-.938 34.66-.96 7.117-.054 14.25.254 21.36.318l16.194.803 4.62.39c3.85.32 7.693.618 11.53.813 8.346.883 16.673.802 25.144 2.159 1.864.276 3.714.338 5.566.873l.717.225c6.162 1.977 7.92 3.64 7.9 7.197l-.003.203c-.017.875.05 1.772-.112 2.593-.581 2.762-4.066 4.12-8.637 3.63-13.696-1.06-27.935-3.332-42.97-4.168-11.055-.83-22.314-1.459-33.596-1.603l-.022-.332Z"
+                    fill="#D1D5DB"
+                    fill-rule="evenodd"
+                  ></path>
+                </svg>
+              </span>
+            </h1>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: postData?.solutions_field?.solutionContent2SubTitle,
+              }}
+            ></p>
 
-        <div className="grid grid-cols-2 mt-10 gap-10">
-          <div className="div">
-            <div className="grid items-center mb-5 justify-start">
-              <ul>
-                <li className="mb-5">
-                  <span className="grid">
-                    <span className="flex items-center">
-                      <IoIosCheckmark
-                        size={40}
-                        className="fill-junglegreen-500"
-                      />{' '}
-                      Data Streaming via MQTT Broker to Kafka{' '}
-                    </span>
-                    <span className="text-sm text-slate-400 ml-10">
-                      Sensors and IoT devices transmit data to an optional MQTT
-                      broker, which then forwards messages to Kafka.
-                    </span>
-                  </span>
-                </li>
-                <li className="mb-5">
-                  <span className="grid">
-                    <span className="flex items-center">
-                      <IoIosCheckmark
-                        size={40}
-                        className="fill-junglegreen-500"
-                      />{' '}
-                      Data Streaming via MQTT Broker to Kafka{' '}
-                    </span>
-                    <span className="text-sm text-slate-400 ml-10">
-                      Sensors and IoT devices transmit data to an optional MQTT
-                      broker, which then forwards messages to Kafka.
-                    </span>
-                  </span>
-                </li>
-                <li className="mb-5">
-                  <span className="grid">
-                    <span className="flex items-center">
-                      <IoIosCheckmark
-                        size={40}
-                        className="fill-junglegreen-500"
-                      />{' '}
-                      Data Streaming via MQTT Broker to Kafka{' '}
-                    </span>
-                    <span className="text-sm text-slate-400 ml-10">
-                      Sensors and IoT devices transmit data to an optional MQTT
-                      broker, which then forwards messages to Kafka.
-                    </span>
-                  </span>
-                </li>
-                <li className="mb-5">
-                  <span className="grid">
-                    <span className="flex items-center">
-                      <IoIosCheckmark
-                        size={40}
-                        className="fill-junglegreen-500"
-                      />{' '}
-                      Data Streaming via MQTT Broker to Kafka{' '}
-                    </span>
-                    <span className="text-sm text-slate-400 ml-10">
-                      Sensors and IoT devices transmit data to an optional MQTT
-                      broker, which then forwards messages to Kafka.
-                    </span>
-                  </span>
-                </li>
-                <li className="mb-5">
-                  <span className="grid">
-                    <span className="flex items-center">
-                      <IoIosCheckmark
-                        size={40}
-                        className="fill-junglegreen-500"
-                      />{' '}
-                      Data Streaming via MQTT Broker to Kafka{' '}
-                    </span>
-                    <span className="text-sm text-slate-400 ml-10">
-                      Sensors and IoT devices transmit data to an optional MQTT
-                      broker, which then forwards messages to Kafka.
-                    </span>
-                  </span>
-                </li>
-              </ul>
+            <div className="grid grid-cols-2 mt-10 gap-10">
+              <div className="div">
+                <div className="grid items-center mb-5 justify-start">
+                  <ul>
+                    <li className="mb-5">
+                      {postData?.solutions_field?.solutionContent2Text.map(
+                        (textItem: any, index: any) => (
+                          <span key={index} className="grid">
+                            <span className="flex items-center">
+                              <IoIosCheckmark
+                                size={40}
+                                className="fill-junglegreen-500"
+                              />{' '}
+                              {textItem?.listText1}
+                            </span>
+                            <span className="text-sm text-slate-400 ml-10">
+                              {textItem?.listText2}
+                            </span>
+                          </span>
+                        )
+                      )}
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="relative w-full h-128 mb-20 lg:mb-0 animate__animated animate__fadeIn">
+                <div className="absolute top-0 right-0 h-full w-full mt-6 -mr-6 bg-junglegreen-300/60 rounded-xl"></div>
+                <Image
+                  width={400}
+                  height={400}
+                  className="absolute top-0 right-0 h-full w-full rounded-xl object-cover object-top"
+                  src={
+                    postData?.solutions_field?.solutionContent2Image
+                      ?.mediaItemUrl
+                  }
+                  alt="single solution image"
+                />
+              </div>
             </div>
           </div>
-          <div className="relative w-full h-128 mb-20 lg:mb-0 animate__animated animate__fadeIn">
-            <div className="absolute top-0 right-0 h-full w-full mt-6 -mr-6 bg-junglegreen-300/60 rounded-xl"></div>
-            <img
-              className="absolute top-0 right-0 h-full w-full rounded-xl object-cover object-top"
-              src="https://wp.alithemes.com/html/monst/assets/imgs/placeholders/img-1.png"
-              alt=""
-            />
-          </div>
-        </div>
+        )}
         <div className="mt-24">
           <h1 className="mb-4 text-center font-inter tracking-[-0.02em] !leading-[1.2] font-extrabold text-2xl lg:text-4xl md:text-4xl text-ebonyclay-900 dark:text-white">
             Addressing Deployment Challenges{' '}
@@ -248,33 +200,42 @@ const SingleSolution = () => {
           enhance efficiency, simplify and streamline deployment.
         </p>
 
-        <div className="grid grid-cols-2 mt-10 gap-10">
-          <div className="relative w-full h-[300px] mb-20 lg:mb-0">
-            <div className="absolute top-0 left-0 h-full w-full -mt-6 -ml-6 bg-junglegreen-300/60 rounded-xl"></div>
-            <img
-              className="absolute top-0 right-0 h-full w-full rounded-xl object-cover object-top"
-              src="https://wp.alithemes.com/html/monst/assets/imgs/placeholders/img-1.png"
-              alt=""
-            />
+        <section className="relative mt-10">
+          <div className="container m-auto">
+            <div className="block relative h-full w-full ">
+              <div className="mr-4 flex justify-center items-center text-center">
+                <div className="relative overflow-hidden w-full flex justify-center items-center mb-20 lg:mb-0 ">
+                  <div className="absolute animation-pulse h-[100px] w-[100px] rounded-full shadow-lg inline-flex items-center justify-center bg-woodsmoke-500/10"></div>
+                  <ul className="flex flex-col text-center items-center justify-center">
+                    <li>
+                      <span className="uppercase text-3xl sm:text-3xl font-bold relative z-20 dark:text-white text-ebony-950 py-8">
+                        Kelvin.ai Kelvin Platform
+                      </span>
+                    </li>
+                    <li>
+                      <span className="text-7xl sm:text-7xl font-bold relative z-20 bg-clip-text text-transparent dark:text-white text-ebony-950 py-8">
+                        +
+                      </span>
+                    </li>
+                    <li>
+                      <span className="uppercase text-3xl sm:text-3xl font-bold relative z-20 bg-clip-text text-transparent dark:text-white text-ebony-950 py-8">
+                        Bizmetric Technical Expertise
+                      </span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                className="absolute m-auto -bottom-16 grid h-max w-full grid-cols-2 -space-x-52 opacity-40 dark:opacity-80"
+              >
+                <div className="h-56 bg-gradient-to-br from-primary to-purple-400 blur-[106px] dark:from-blue-700"></div>
+                <div className="h-32 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
+              </div>
+            </div>
           </div>
-          <div className="flex h-full items-center">
-            <ul className="flex flex-col h-full text-center items-center justify-center">
-              <li>
-                <span className="text-3xl font-bold">
-                  Kelvin.ai Kelvin Platform
-                </span>
-              </li>
-              <li>
-                <span className="text-3xl font-bold">+</span>
-              </li>
-              <li>
-                <span className="text-3xl font-bold">
-                  Bizmetric Technical Expertise
-                </span>
-              </li>
-            </ul>
-          </div>
-        </div>
+        </section>
+
         <div className="border-[0.6px] border-woodsmoke-600/50 mt-24"></div>
       </div>
       <div className="container mt-16">

@@ -7,9 +7,7 @@ import Blog from '@/components/TechTalks/Blog';
 import { SinglePost } from '@/components/TechTalks/SinglePost';
 import SingleSolution from '@/components/Solutions/SingleSolution';
 
-export default function Page({ data }: any) {
-  console.log('test', data?.nodeByUri);
-
+export default function Page({ data, homePage }: any) {
   if (data?.nodeByUri?.title == 'Blogs') {
     return (
       <>
@@ -18,13 +16,13 @@ export default function Page({ data }: any) {
     );
   } else if (data?.nodeByUri?.checkPage?.checkPageField) {
     if (data?.nodeByUri?.checkPage?.addPageField == 'services')
-      return <ParentPage />;
+      return <ParentPage homePage={homePage} />;
   } else if (data?.nodeByUri?.title == 'Contact Us') {
     return <Contact />;
   } else if (data?.nodeByUri?.__typename == 'Post') {
     return <SinglePost postData={data?.nodeByUri} />;
   } else if (data?.nodeByUri?.__typename == 'Solution') {
-    return <SingleSolution />;
+    return <SingleSolution postData={data?.nodeByUri} />;
   } else {
     <>test page</>;
   }
@@ -75,6 +73,21 @@ export const getStaticProps = async (context: any) => {
             id
             title
             excerpt
+            solutions_field {
+              showSolutionVideo
+              solutionVideo
+              showSolution2Content
+              solutionContent2Title
+              solutionContent2TitleCursive
+              solutionContent2SubTitle
+              solutionContent2Text {
+                listText1
+                listText2
+              }
+              solutionContent2Image {
+                mediaItemUrl
+              }
+            }
           }
         }
         menuItems(where: { location: PRIMARY }, first: 45) {
