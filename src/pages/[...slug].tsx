@@ -16,7 +16,7 @@ export default function Page({ data, homePage }: any) {
     );
   } else if (data?.nodeByUri?.checkPage?.checkPageField) {
     if (data?.nodeByUri?.checkPage?.addPageField == 'services')
-      return <ParentPage homePage={homePage} />;
+      return <ParentPage postData={data?.nodeByUri} />;
   } else if (data?.nodeByUri?.title == 'Contact Us') {
     return <Contact />;
   } else if (data?.nodeByUri?.__typename == 'Post') {
@@ -44,6 +44,22 @@ export const getStaticProps = async (context: any) => {
             checkPage {
               checkPageField
               addPageField
+            }
+
+            children {
+              nodes {
+                ... on Page {
+                  id
+                  title
+                  excerpt
+                  uri
+                  featuredImage {
+                    node {
+                      sourceUrl
+                    }
+                  }
+                }
+              }
             }
           }
           ... on Post {

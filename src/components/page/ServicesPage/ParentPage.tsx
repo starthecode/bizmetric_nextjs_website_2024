@@ -2,9 +2,10 @@ import { Text } from '@/components/Home/Headings/Text';
 import Industries from '@/components/Home/Industries/Industries';
 import { IdentifyingSVG, DotAnimationSVG } from '@/components/svg';
 import React from 'react';
+import { ChildPageCards } from './ChildPageCards';
 
-const ParentPage = (homePage: any) => {
-  console.log('homePage:', homePage);
+const ParentPage = ({ postData }: any) => {
+  console.log('postData:', postData);
 
   return (
     <section className="container mt-40">
@@ -923,6 +924,8 @@ const ParentPage = (homePage: any) => {
           </svg>
         </div>
       </div>
+
+      {postData?.children && <ChildPageCards childData={postData?.children} />}
     </section>
   );
 };
