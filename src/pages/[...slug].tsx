@@ -443,7 +443,7 @@ export const getServerSideProps = async (context: any) => {
         data,
       },
     };
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error fetching data:', error);
     return {
       props: {
