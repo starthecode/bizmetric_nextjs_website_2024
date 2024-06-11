@@ -1,3 +1,260 @@
+// import { gql } from '@apollo/client';
+// import client from '../../client';
+
+// import { Contact } from '@/components/ContactUs/Contact';
+// import ParentPage from '@/components/page/ServicesPage/ParentPage';
+// import Blog from '@/components/TechTalks/Blog';
+// import { SinglePost } from '@/components/TechTalks/SinglePost';
+// import SingleSolution from '@/components/Solutions/SingleSolution';
+
+// export default function Page({ data, homePage }: any) {
+//   if (data?.nodeByUri?.title == 'Blogs') {
+//     return (
+//       <>
+//         <Blog />
+//       </>
+//     );
+//   } else if (data?.nodeByUri?.checkPage?.checkPageField) {
+//     if (data?.nodeByUri?.checkPage?.addPageField == 'services')
+//       return <ParentPage postData={data?.nodeByUri} />;
+//   } else if (data?.nodeByUri?.title == 'Contact Us') {
+//     return <Contact />;
+//   } else if (data?.nodeByUri?.__typename == 'Post') {
+//     return <SinglePost postData={data?.nodeByUri} />;
+//   } else if (data?.nodeByUri?.__typename == 'Solution') {
+//     return <SingleSolution postData={data?.nodeByUri} />;
+//   } else {
+//     <>test page</>;
+//   }
+// }
+
+// export const getStaticProps = async (context: any) => {
+//   const uri = context?.params?.slug
+//     ? `/${context?.params?.slug.join('/')}`
+//     : '/';
+
+//   const { data } = await client.query({
+//     query: gql`
+//       query PageQuery($uri: String!) {
+//         nodeByUri(uri: $uri) {
+//           ... on Page {
+//             id
+//             title
+//             excerpt
+//             PageUnderConstructionStatus {
+//               pageUnderConstruction
+//             }
+//             checkPage {
+//               checkPageField
+//               addPageField
+//             }
+
+//             ServicesAcfFields {
+//               serviceTitle1
+//               serviceSpecialTitleText
+//               serviceText1
+//               boxesItemsX3 {
+//                 boxesItemsImage {
+//                   uri
+//                 }
+//                 boxesItemsTitle
+//                 boxesItemsDesc
+//               }
+//               serviceSmallTitle2
+//               serviceTitle2
+//               serviceText2
+//               overviewSection {
+//                 overviewSectionTitle
+//                 overviewSectionDesc
+//               }
+
+//               fourthSectionImage {
+//                 mediaItemUrl
+//               }
+//               fourthSectionSmallTitle
+//               fourthSectionMainTitle
+//               fourthSectionSpecialTitle
+//               fourthSectionDesc
+//               fourthSectionList {
+//                 listText
+//               }
+//               fifthSectionSmallTitle
+//               fifthSectionMainTitle
+//               fifthSectionListItems {
+//                 icon {
+//                   mediaItemUrl
+//                 }
+//                 title
+//                 listText
+//               }
+//             }
+
+//             children {
+//               nodes {
+//                 ... on Page {
+//                   id
+//                   title
+//                   excerpt
+//                   uri
+//                   featuredImage {
+//                     node {
+//                       sourceUrl
+//                     }
+//                   }
+//                 }
+//               }
+//             }
+//           }
+//           ... on Post {
+//             id
+//             title
+//             excerpt
+//             content
+//             date
+//             PageUnderConstructionStatus {
+//               pageUnderConstruction
+//             }
+//             author {
+//               node {
+//                 name
+//                 avatar {
+//                   url
+//                 }
+//               }
+//             }
+//             categories {
+//               nodes {
+//                 name
+//               }
+//             }
+//             singleBlogFields {
+//               customTextBox1
+//             }
+//           }
+//           ... on Solution {
+//             id
+//             title
+//             excerpt
+//             PageUnderConstructionStatus {
+//               pageUnderConstruction
+//             }
+//             solutions_field {
+//               showSolutionVideo
+//               solutionVideo
+//               showSolution2Content
+//               solutionContent2Title
+//               solutionContent2TitleCursive
+//               solutionContent2SubTitle
+//               solutionContent2Text {
+//                 listText1
+//                 listText2
+//               }
+//               solutionContent2Image {
+//                 mediaItemUrl
+//               }
+//             }
+//           }
+//         }
+//         menuItems(where: { location: PRIMARY }, first: 45) {
+//           nodes {
+//             key: id
+//             parentId
+//             title: label
+//             url
+//             path
+//             description
+//             menuAcfFields {
+//               showMenuLabel
+//               menuLabelText
+//               showMegaMenu
+//               showServicesMegaMenu
+//               menuClasses
+//               menuIcon {
+//                 mediaItemUrl
+//               }
+//             }
+//           }
+//         }
+//       }
+//     `,
+//     variables: { uri }, // Pass the "uri" variable here
+//   });
+
+//   return {
+//     props: {
+//       data,
+//     },
+//   };
+// };
+
+// export const getStaticPaths = async () => {
+//   const { data } = await client.query({
+//     query: gql`
+//       query AllPagesQuery {
+//         pages(first: 500) {
+//           nodes {
+//             uri
+//           }
+//         }
+//         posts(first: 1000) {
+//           nodes {
+//             uri
+//           }
+//         }
+//         solutions(first: 500) {
+//           nodes {
+//             uri
+//           }
+//         }
+//       }
+//     `,
+//   });
+
+//   // return {
+//   //   paths: data?.pages?.nodes
+//   //     .map((page: any) => page.uri)
+//   //     .filter((uri: string) => uri !== '/')
+//   //     .map((uri: string) => ({
+//   //       params: {
+//   //         slug: uri.split('/').filter((segment: string) => segment !== ''),
+//   //       },
+//   //     })),
+//   //   fallback: false,
+//   // };
+
+//   const pagePaths = data?.pages?.nodes
+//     .map((page: any) => page.uri)
+//     .filter((uri: string) => uri !== '/')
+//     .map((uri: string) => ({
+//       params: {
+//         slug: uri.split('/').filter((segment: string) => segment !== ''),
+//       },
+//     }));
+
+//   const postPaths = data?.posts?.nodes
+//     .map((post: any) => post.uri)
+//     .map((uri: string) => ({
+//       params: {
+//         slug: uri.split('/').filter((segment: string) => segment !== ''),
+//       },
+//     }));
+
+//   const postSolutions = data?.solutions?.nodes
+//     .map((post: any) => post.uri)
+//     .map((uri: string) => ({
+//       params: {
+//         slug: uri.split('/').filter((segment: string) => segment !== ''),
+//       },
+//     }));
+
+//   const allPaths = [...pagePaths, ...postPaths, ...postSolutions];
+
+//   return {
+//     paths: allPaths,
+//     fallback: false,
+//   };
+// };
+
 import { gql } from '@apollo/client';
 import client from '../../client';
 
@@ -24,172 +281,180 @@ export default function Page({ data, homePage }: any) {
   } else if (data?.nodeByUri?.__typename == 'Solution') {
     return <SingleSolution postData={data?.nodeByUri} />;
   } else {
-    <>test page</>;
+    return <>test page</>;
   }
 }
 
-export const getStaticProps = async (context: any) => {
+export const getServerSideProps = async (context: any) => {
   const uri = context?.params?.slug
     ? `/${context?.params?.slug.join('/')}`
     : '/';
 
-  const { data } = await client.query({
-    query: gql`
-      query PageQuery($uri: String!) {
-        nodeByUri(uri: $uri) {
-          ... on Page {
-            id
-            title
-            excerpt
-            PageUnderConstructionStatus {
-              pageUnderConstruction
-            }
-            checkPage {
-              checkPageField
-              addPageField
-            }
+  try {
+    const { data } = await client.query({
+      query: gql`
+        query PageQuery($uri: String!) {
+          nodeByUri(uri: $uri) {
+            ... on Page {
+              id
+              title
+              excerpt
+              PageUnderConstructionStatus {
+                pageUnderConstruction
+              }
+              checkPage {
+                checkPageField
+                addPageField
+              }
 
-            ServicesAcfFields {
-              serviceTitle1
-              serviceSpecialTitleText
-              serviceText1
-              boxesItemsX3 {
-                boxesItemsImage {
-                  uri
+              ServicesAcfFields {
+                serviceTitle1
+                serviceSpecialTitleText
+                serviceText1
+                boxesItemsX3 {
+                  boxesItemsImage {
+                    uri
+                  }
+                  boxesItemsTitle
+                  boxesItemsDesc
                 }
-                boxesItemsTitle
-                boxesItemsDesc
-              }
-              serviceSmallTitle2
-              serviceTitle2
-              serviceText2
-              overviewSection {
-                overviewSectionTitle
-                overviewSectionDesc
-              }
+                serviceSmallTitle2
+                serviceTitle2
+                serviceText2
+                overviewSection {
+                  overviewSectionTitle
+                  overviewSectionDesc
+                }
 
-              fourthSectionImage {
-                mediaItemUrl
-              }
-              fourthSectionSmallTitle
-              fourthSectionMainTitle
-              fourthSectionSpecialTitle
-              fourthSectionDesc
-              fourthSectionList {
-                listText
-              }
-              fifthSectionSmallTitle
-              fifthSectionMainTitle
-              fifthSectionListItems {
-                icon {
+                fourthSectionImage {
                   mediaItemUrl
                 }
-                title
-                listText
-              }
-            }
-
-            children {
-              nodes {
-                ... on Page {
-                  id
+                fourthSectionSmallTitle
+                fourthSectionMainTitle
+                fourthSectionSpecialTitle
+                fourthSectionDesc
+                fourthSectionList {
+                  listText
+                }
+                fifthSectionSmallTitle
+                fifthSectionMainTitle
+                fifthSectionListItems {
+                  icon {
+                    mediaItemUrl
+                  }
                   title
-                  excerpt
-                  uri
-                  featuredImage {
-                    node {
-                      sourceUrl
+                  listText
+                }
+              }
+
+              children {
+                nodes {
+                  ... on Page {
+                    id
+                    title
+                    excerpt
+                    uri
+                    featuredImage {
+                      node {
+                        sourceUrl
+                      }
                     }
                   }
                 }
               }
             }
-          }
-          ... on Post {
-            id
-            title
-            excerpt
-            content
-            date
-            PageUnderConstructionStatus {
-              pageUnderConstruction
+            ... on Post {
+              id
+              title
+              excerpt
+              content
+              date
+              PageUnderConstructionStatus {
+                pageUnderConstruction
+              }
+              author {
+                node {
+                  name
+                  avatar {
+                    url
+                  }
+                }
+              }
+              categories {
+                nodes {
+                  name
+                }
+              }
+              singleBlogFields {
+                customTextBox1
+              }
             }
-            author {
-              node {
-                name
-                avatar {
-                  url
+            ... on Solution {
+              id
+              title
+              excerpt
+              PageUnderConstructionStatus {
+                pageUnderConstruction
+              }
+              solutions_field {
+                showSolutionVideo
+                solutionVideo
+                showSolution2Content
+                solutionContent2Title
+                solutionContent2TitleCursive
+                solutionContent2SubTitle
+                solutionContent2Text {
+                  listText1
+                  listText2
+                }
+                solutionContent2Image {
+                  mediaItemUrl
                 }
               }
             }
-            categories {
-              nodes {
-                name
-              }
-            }
-            singleBlogFields {
-              customTextBox1
-            }
           }
-          ... on Solution {
-            id
-            title
-            excerpt
-            PageUnderConstructionStatus {
-              pageUnderConstruction
-            }
-            solutions_field {
-              showSolutionVideo
-              solutionVideo
-              showSolution2Content
-              solutionContent2Title
-              solutionContent2TitleCursive
-              solutionContent2SubTitle
-              solutionContent2Text {
-                listText1
-                listText2
-              }
-              solutionContent2Image {
-                mediaItemUrl
+          menuItems(where: { location: PRIMARY }, first: 45) {
+            nodes {
+              key: id
+              parentId
+              title: label
+              url
+              path
+              description
+              menuAcfFields {
+                showMenuLabel
+                menuLabelText
+                showMegaMenu
+                showServicesMegaMenu
+                menuClasses
+                menuIcon {
+                  mediaItemUrl
+                }
               }
             }
           }
         }
-        menuItems(where: { location: PRIMARY }, first: 45) {
-          nodes {
-            key: id
-            parentId
-            title: label
-            url
-            path
-            description
-            menuAcfFields {
-              showMenuLabel
-              menuLabelText
-              showMegaMenu
-              showServicesMegaMenu
-              menuClasses
-              menuIcon {
-                mediaItemUrl
-              }
-            }
-          }
-        }
-      }
-    `,
-    variables: { uri }, // Pass the "uri" variable here
-  });
+      `,
+      variables: { uri }, // Pass the "uri" variable here
+    });
 
-  // Your other logic here...
-
-  return {
-    props: {
-      data,
-    },
-  };
+    return {
+      props: {
+        data,
+      },
+    };
+  } catch (error) {
+    console.error('Error fetching data:', error);
+    return {
+      props: {
+        data: null,
+        error: error.message,
+      },
+    };
+  }
 };
 
-export const getStaticPaths = async () => {
+export const getServerSidePaths = async () => {
   const { data } = await client.query({
     query: gql`
       query AllPagesQuery {
@@ -211,18 +476,6 @@ export const getStaticPaths = async () => {
       }
     `,
   });
-
-  // return {
-  //   paths: data?.pages?.nodes
-  //     .map((page: any) => page.uri)
-  //     .filter((uri: string) => uri !== '/')
-  //     .map((uri: string) => ({
-  //       params: {
-  //         slug: uri.split('/').filter((segment: string) => segment !== ''),
-  //       },
-  //     })),
-  //   fallback: false,
-  // };
 
   const pagePaths = data?.pages?.nodes
     .map((page: any) => page.uri)

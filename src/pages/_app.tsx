@@ -60,7 +60,7 @@ Bizmetric | Artificial Intelligence | Data Analytics | Consultancy Services Bizm
             <span className={`${shouldHide ? 'hidden' : ''}`}>
               <Poll />
             </span>
-            <span className="fixed blur-[300px] w-[600px] h-[600px] rounded-full top-1/2 -translate-y-1/2 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 bg-flamingo-600/40 dark:bg-junglegreen-400/25"></span>
+            <span className="fixed blur-[300px] w-[400px] h-[400px] rounded-full top-1/2 -translate-y-1/2 start-1/2 ltr:-translate-x-1/2 rtl:translate-x-1/2 bg-flamingo-600/20 dark:bg-junglegreen-400/30"></span>
             <Header menus={pageProps?.data?.menuItems} />
             {pageProps?.data?.pageBy?.title != 'Home' && (
               <Breadcrumbs props={pageProps?.data?.nodeByUri} />
