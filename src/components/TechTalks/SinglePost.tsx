@@ -314,8 +314,11 @@ export const SinglePost = ({ postData }: any) => {
                     role="tooltip"
                   >
                     <div className="flex items-center gap-5">
-                      <img
-                        src="https://themes.coderthemes.com/prompt_t/assets/blog-3-8c272f70.png"
+                      <Image
+                        width={16}
+                        height={16}
+                        alt="user img"
+                        src="https://test.experimentalapp.xyz/wp-content/uploads/2024/06/avatar-girl-face-woman-user-flat-classy-users-icon.png"
                         className="w-16 rounded"
                       />
                       <div>
@@ -336,8 +339,11 @@ export const SinglePost = ({ postData }: any) => {
             <div className="col-span-2">
               <div className="my-5 md:my-0">
                 <div className="flex md:justify-center justify-start items-center gap-4">
-                  <img
-                    src="https://themes.coderthemes.com/prompt_t/assets/img-2-3bd8be1c.jpg"
+                  <Image
+                    width={16}
+                    height={16}
+                    alt="user img"
+                    src="https://test.experimentalapp.xyz/wp-content/uploads/2024/06/avatar-girl-face-woman-user-flat-classy-users-icon.png"
                     className="h-12 w-12 rounded-full"
                   />
                   <div>
@@ -366,8 +372,11 @@ export const SinglePost = ({ postData }: any) => {
                 role="tooltip"
               >
                 <div className="flex items-center gap-5">
-                  <img
-                    src="https://themes.coderthemes.com/prompt_t/assets/blog-2-46fd5357.png"
+                  <Image
+                    width={16}
+                    height={16}
+                    alt="user img"
+                    src="https://test.experimentalapp.xyz/wp-content/uploads/2024/06/avatar-girl-face-woman-user-flat-classy-users-icon.png"
                     className="w-16 rounded"
                   />
                   <div>
@@ -393,9 +402,11 @@ export const SinglePost = ({ postData }: any) => {
           </div>
           <div>
             <div className="flex gap-3 my-6">
-              <img
-                src="https://themes.coderthemes.com/prompt_t/assets/img-4-e230b701.jpg"
-                className="h-11 w-11 rounded-md"
+              <Image
+                width={16}
+                height={16}
+                alt="user img"
+                src="https://test.experimentalapp.xyz/wp-content/uploads/2024/06/avatar-girl-face-woman-user-flat-classy-users-icon.png"
               />
               <div>
                 <h6 className="text-sm mb-1">Sansa Stark</h6>
@@ -408,8 +419,11 @@ export const SinglePost = ({ postData }: any) => {
                   <i className="fa-regular fa-comment me-1"></i> Reply
                 </a>
                 <div className="flex gap-3 my-6">
-                  <img
-                    src="https://themes.coderthemes.com/prompt_t/assets/img-1-f7888c4b.jpg"
+                  <Image
+                    width={16}
+                    height={16}
+                    alt="user img"
+                    src="https://test.experimentalapp.xyz/wp-content/uploads/2024/06/avatar-girl-face-woman-user-flat-classy-users-icon.png"
                     className="h-11 w-11 rounded-md"
                   />
                   <div>
@@ -429,8 +443,11 @@ export const SinglePost = ({ postData }: any) => {
             </div>
             <div className="border-b"></div>
             <div className="flex gap-3 my-6">
-              <img
-                src="https://themes.coderthemes.com/prompt_t/assets/img-2-3bd8be1c.jpg"
+              <Image
+                width={16}
+                height={16}
+                alt="user img"
+                src="https://test.experimentalapp.xyz/wp-content/uploads/2024/06/avatar-girl-face-woman-user-flat-classy-users-icon.png"
                 className="h-11 w-11 rounded-md"
               />
               <div>
