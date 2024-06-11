@@ -11,9 +11,9 @@ export const LeftCard = ({ item }: any) => {
   const words = item.homeSliderTitle.split(' ');
   const wordIndexToWrap = words.length - 1;
   words[wordIndexToWrap] = (
-    <span className="font-cursive relative bg-gradient-to-r from-formalGreenLight to-formalGreen bg-clip-text text-transparent dark:to-secondaryLight">
+    <span className="overflow-hidden font-cursive relative bg-gradient-to-r from-formalGreenLight to-formalGreen bg-clip-text text-transparent dark:to-secondaryLight">
       {words[wordIndexToWrap]}
-      <LineSvg classname={'right-0 w-[80%]'} />
+      <LineSvg classname={'bottom-0 right-0 w-full'} />
     </span>
   );
 

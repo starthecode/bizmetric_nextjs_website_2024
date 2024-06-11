@@ -5,11 +5,14 @@ const Testimonials = ({ testimonials }: any) => {
   return (
     <section className="relative mt-24 sm:mt-24 md:mt-32 xl:mt-40">
       <div className="container">
-        <Text
-          small={'Client Testimonials'}
-          main={'Learn about Our Services from Industry Leaders'}
-          classes={'font-cursive'}
-        />
+        <div className="flex flex-col justify-center text-center mb-14">
+          <Text
+            small={'Client Testimonials'}
+            main={'Learn about Our Services from Industry Leaders'}
+            classes={'font-cursive'}
+          />
+        </div>
+
         <div className="marquee">
           <div className="slide">
             <Blockquote testimonials={testimonials} />

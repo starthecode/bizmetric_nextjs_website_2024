@@ -7,7 +7,7 @@ type caseProps = {
 
 const CaseStudies = ({ catId }: caseProps) => {
   const { data, error, isLoading }: any = useFetch(
-    `wp-json/wp/v2/case_studies?casestudies_industry=${catId}&_embed&per_page=4`
+    `/wp-json/custom/v1/case-studies?casestudies_industry=${catId}`
   );
 
   if (isLoading) {
@@ -26,11 +26,11 @@ const CaseStudies = ({ catId }: caseProps) => {
             className="flex items-center p-2 rounded-lg mb-5 shadow-lg bg-white dark:bg-woodsmoke-950 "
             key={item.id}
           >
-            {item?._embedded['wp:featuredmedia'] && (
+            {item?.featured_image && (
               <Image
                 width="150"
                 height="150"
-                src={item._embedded['wp:featuredmedia']['0'].source_url}
+                src={item.featured_image}
                 className="object-contain w-[100px] h-[100px] xl:w-auto xl:h-auto rounded-lg"
                 alt=""
               />
@@ -39,8 +39,8 @@ const CaseStudies = ({ catId }: caseProps) => {
             <div className="mt-0 ml-2 xl:ml-5 xl:mt-0 lg:w-1/2 lg:mt-0 ">
               <p className="text-sm text-slate-300">Category</p>
 
-              <h1 className="block mt-2 text-sm md:text-md xl:text-lg font-semibold text-ebony-900 dark:text-white">
-                {item.title.rendered}
+              <h1 className="block mt-2 text-sm font-semibold text-ebony-900 dark:text-white">
+                {item.title}
               </h1>
 
               <a

@@ -40,7 +40,7 @@ const Slider = () => {
                     className="fill-junglegreen-500"
                     width={30}
                     height={30}
-                    enable-background="new 0 0 511.95 511.95"
+                    enableBackground="new 0 0 511.95 511.95"
                     viewBox="0 0 511.95 511.95"
                     xmlns="http://www.w3.org/2000/svg"
                   >
@@ -95,7 +95,7 @@ const Slider = () => {
               <div className="flex flex-col gap-5 items-center pt-4 pb-4">
                 <div className="p-4 w-fit border border-success-500/10 flex relative *:relative *:size-6 *:m-auto size-12 rounded-[1rem] dark:bg-gray-900 dark:border-white/15 before:rounded-[1rem] before:absolute before:inset-0 before:border-t before:border-white before:from-success-100 dark:before:border-white/20 before:bg-gradient-to-b dark:before:from-white/10 dark:before:to-transparent before:shadow dark:before:shadow-gray-950">
                   <svg
-                    enable-background="new 0 0 32 32"
+                    enableBackground="new 0 0 32 32"
                     className="fill-junglegreen-500"
                     width={30}
                     height={30}
@@ -134,7 +134,7 @@ const Slider = () => {
                     className="fill-junglegreen-500"
                     width={30}
                     height={30}
-                    enable-background="new 0 0 512 512"
+                    enableBackground="new 0 0 512 512"
                     viewBox="0 0 512 512"
                     xmlns="http://www.w3.org/2000/svg"
                   >

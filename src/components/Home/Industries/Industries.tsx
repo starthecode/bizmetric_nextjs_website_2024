@@ -15,7 +15,7 @@ import Image from 'next/image';
 
 const Industries = ({ industries }: any) => {
   const [activeTab, setActiveTab] = useState(0);
-  const [catId, setCatId] = useState(12);
+  const [catId, setCatId] = useState(25);
   const handleTabClick = (index: any, id: number) => {
     setActiveTab(index);
     setCatId(id);

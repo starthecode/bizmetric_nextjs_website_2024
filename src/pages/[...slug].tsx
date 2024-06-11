@@ -111,6 +111,9 @@ export const getStaticProps = async (context: any) => {
             excerpt
             content
             date
+            PageUnderConstructionStatus {
+              pageUnderConstruction
+            }
             author {
               node {
                 name
@@ -132,6 +135,9 @@ export const getStaticProps = async (context: any) => {
             id
             title
             excerpt
+            PageUnderConstructionStatus {
+              pageUnderConstruction
+            }
             solutions_field {
               showSolutionVideo
               solutionVideo

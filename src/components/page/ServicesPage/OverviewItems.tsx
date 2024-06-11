@@ -23,7 +23,7 @@ export const OverviewItems = ({ OvItems, title1, title2 }: any) => {
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 512 512"
                     className="fill-junglegreen-500"
                     height="40"

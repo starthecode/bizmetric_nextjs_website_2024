@@ -33,7 +33,7 @@ export const WhySection = ({
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
-                      stroke-width="0"
+                      strokeWidth="0"
                       viewBox="0 0 512 512"
                       className="fill-junglegreen-500"
                       height="50"
@@ -53,7 +53,7 @@ export const WhySection = ({
                     <svg
                       stroke="currentColor"
                       fill="currentColor"
-                      stroke-width="0"
+                      strokeWidth="0"
                       viewBox="0 0 24 24"
                       className="ml-2 w-4 h-4"
                       height="1em"

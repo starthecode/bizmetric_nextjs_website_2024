@@ -5,8 +5,6 @@ import Tags from '../extras/Tags';
 import { formatDate } from '@/utils/utils';
 
 export const SinglePost = ({ postData }: any) => {
-  console.log('postData', postData);
-
   return (
     <>
       <section>
@@ -57,9 +55,9 @@ export const SinglePost = ({ postData }: any) => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                       </svg>
@@ -73,9 +71,9 @@ export const SinglePost = ({ postData }: any) => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
                       </svg>
@@ -89,9 +87,9 @@ export const SinglePost = ({ postData }: any) => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       >
                         <rect
                           x="2"
@@ -116,15 +114,6 @@ export const SinglePost = ({ postData }: any) => {
         <div className="container">
           <div dangerouslySetInnerHTML={{ __html: postData.content }} />
 
-          {/* <div>
-            <img
-              src="https://themes.coderthemes.com/prompt_t/assets/hero-post-5614a597.png"
-              className="rounded-md"
-            />
-            <p className="text-xs text-gray-500 mt-2 text-center">
-              The image caption referencing the above image
-            </p>
-          </div> */}
           <h1 className="text-xl mb-3 mt-10">
             Itaque earum rerum hic tenetur sapiente delectu
           </h1>
@@ -173,28 +162,40 @@ export const SinglePost = ({ postData }: any) => {
             eaque ipsa quae ab illo inventore.
           </p>
           <div>
-            <div className="grid sm:grid-cols-2 grid-cols-1 gap-8 my-10">
+            <div className="relative grid sm:grid-cols-2 grid-cols-1 gap-8 my-10 z-10">
               <div>
-                <img
-                  src="https://themes.coderthemes.com/prompt_t/assets/3-3e088f04.jpg"
+                <Image
+                  width={600}
+                  height={600}
+                  alt="blog img"
+                  src="https://test.experimentalapp.xyz/wp-content/uploads/2024/06/3-3e088f04.jpg"
+                  className="w-auto h-auto rounded"
+                />
+              </div>
+              <div>
+                <Image
+                  width={600}
+                  height={600}
+                  alt="blog img"
+                  src="https://test.experimentalapp.xyz/wp-content/uploads/2024/06/4-67ea0c5f.jpg"
                   className="rounded"
                 />
               </div>
               <div>
-                <img
-                  src="https://themes.coderthemes.com/prompt_t/assets/4-67ea0c5f.jpg"
+                <Image
+                  width={600}
+                  height={600}
+                  alt="blog img"
+                  src="https://test.experimentalapp.xyz/wp-content/uploads/2024/06/6-dfd12c4b.jpg"
                   className="rounded"
                 />
               </div>
               <div>
-                <img
-                  src="https://themes.coderthemes.com/prompt_t/assets/5-6760e441.jpg"
-                  className="rounded"
-                />
-              </div>
-              <div>
-                <img
-                  src="https://themes.coderthemes.com/prompt_t/assets/6-dfd12c4b.jpg"
+                <Image
+                  width={600}
+                  height={600}
+                  alt="blog img"
+                  src="https://test.experimentalapp.xyz/wp-content/uploads/2024/06/5-6760e441.jpg"
                   className="rounded"
                 />
               </div>
@@ -241,9 +242,9 @@ export const SinglePost = ({ postData }: any) => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                   </svg>
@@ -257,9 +258,9 @@ export const SinglePost = ({ postData }: any) => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
                   </svg>
@@ -273,9 +274,9 @@ export const SinglePost = ({ postData }: any) => {
                     viewBox="0 0 24 24"
                     fill="none"
                     stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   >
                     <rect
                       x="2"
@@ -403,7 +404,7 @@ export const SinglePost = ({ postData }: any) => {
                   At vero eos et accusamus et iusto odio dignissimos ducimus qui
                   blanditiis praesentium voluptatum deleniti atque.
                 </p>
-                <a href="javascript: void(0);" className="text-primary text-sm">
+                <a href="" className="text-primary text-sm">
                   <i className="fa-regular fa-comment me-1"></i> Reply
                 </a>
                 <div className="flex gap-3 my-6">
@@ -419,10 +420,7 @@ export const SinglePost = ({ postData }: any) => {
                       reiciendis voluptatibus maiores alias consequatur aut
                       perferendis
                     </p>
-                    <a
-                      href="javascript: void(0);"
-                      className="text-primary text-sm"
-                    >
+                    <a href="" className="text-primary text-sm">
                       <i className="fa-regular fa-comment me-1"></i> Reply
                     </a>
                   </div>
@@ -442,7 +440,7 @@ export const SinglePost = ({ postData }: any) => {
                   At vero eos et accusamus et iusto odio dignissimos ducimus qui
                   blanditiis praesentium voluptatum deleniti atque.
                 </p>
-                <a href="javascript: void(0);" className="text-primary text-sm">
+                <a href="" className="text-primary text-sm">
                   <i className="fa-regular fa-comment me-1"></i> Reply
                 </a>
               </div>

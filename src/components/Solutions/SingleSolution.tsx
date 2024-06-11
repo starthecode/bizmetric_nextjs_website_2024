@@ -30,7 +30,14 @@ import Slider from './Slider';
 // });
 
 export const SingleSolution = ({ postData }: any) => {
-  console.log('solutionsData', postData?.solutions_field);
+  if (postData?.PageUnderConstructionStatus?.pageUnderConstruction === true) {
+    return (
+      <div className="text-center my-10">
+        <h1 className="text-2xl uppercase">Page Under Construction</h1>
+      </div>
+    );
+  }
+
   return (
     <section id="services" className="scroll-mt-17 relative pt-5">
       {postData?.solutions_field?.showSolutionVideo == true && (

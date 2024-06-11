@@ -2,8 +2,6 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 
 export const Breadcrumbs = (props: any) => {
-  console.log('props', props?.props?.__typename);
-
   const secondLevel =
     props?.props?.__typename == 'Post' ? 'Blogs' : 'Our Services';
 

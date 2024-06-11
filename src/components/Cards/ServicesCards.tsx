@@ -66,7 +66,7 @@ const ServicesCards = () => {
                   <svg
                     className="dark:fill-white fill-flamingo-500"
                     id="fi_4592852"
-                    enable-background="new 0 0 512 512"
+                    enableBackground="new 0 0 512 512"
                     height="512"
                     viewBox="0 0 512 512"
                     width="40"
@@ -124,7 +124,7 @@ const ServicesCards = () => {
                   <svg
                     className="dark:fill-white fill-flamingo-500"
                     id="fi_8759068"
-                    enable-background="new 0 0 512 512"
+                    enableBackground="new 0 0 512 512"
                     height="512"
                     viewBox="0 0 512 512"
                     width="40"

@@ -219,11 +219,6 @@ const Services = ({ services }: any) => {
                 ></rect>
               </svg>
             </div>
-            {/* <div>
-              <span className="absolute bottom-0 left-0 -z-1">
-                <img src="/images/grid-svg354.svg" alt="grid" />
-              </span>
-            </div> */}
           </div>
         </div>
       </section>

@@ -1,8 +1,6 @@
 import React from 'react';
 
 export const BoxesItems = ({ BoxItem }: any) => {
-  console.log('BoxItem', BoxItem);
-
   return (
     <div className="mt-12 grid sm:grid-cols-3 lg:grid-cols-3 gap-3">
       {BoxItem &&
