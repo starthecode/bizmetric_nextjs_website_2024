@@ -46,6 +46,46 @@ export const getStaticProps = async (context: any) => {
               addPageField
             }
 
+            ServicesAcfFields {
+              serviceTitle1
+              serviceSpecialTitleText
+              serviceText1
+              boxesItemsX3 {
+                boxesItemsImage {
+                  uri
+                }
+                boxesItemsTitle
+                boxesItemsDesc
+              }
+              serviceSmallTitle2
+              serviceTitle2
+              serviceText2
+              overviewSection {
+                overviewSectionTitle
+                overviewSectionDesc
+              }
+
+              fourthSectionImage {
+                mediaItemUrl
+              }
+              fourthSectionSmallTitle
+              fourthSectionMainTitle
+              fourthSectionSpecialTitle
+              fourthSectionDesc
+              fourthSectionList {
+                listText
+              }
+              fifthSectionSmallTitle
+              fifthSectionMainTitle
+              fifthSectionListItems {
+                icon {
+                  mediaItemUrl
+                }
+                title
+                listText
+              }
+            }
+
             children {
               nodes {
                 ... on Page {
