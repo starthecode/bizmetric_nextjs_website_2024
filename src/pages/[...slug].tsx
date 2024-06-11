@@ -41,6 +41,9 @@ export const getStaticProps = async (context: any) => {
             id
             title
             excerpt
+            PageUnderConstructionStatus {
+              pageUnderConstruction
+            }
             checkPage {
               checkPageField
               addPageField

@@ -7,6 +7,14 @@ import { WhySection } from './WhySection';
 import { ApproachSection } from './ApproachSection';
 
 const ParentPage = ({ postData }: any) => {
+  if (postData?.PageUnderConstructionStatus?.pageUnderConstruction === true) {
+    return (
+      <div className="text-center my-10">
+        <h1 className="text-2xl uppercase">Page Under Construction</h1>
+      </div>
+    );
+  }
+
   return (
     <section className="container mt-40">
       <div className="w-full text-center flex flex-col justify-center items-center">

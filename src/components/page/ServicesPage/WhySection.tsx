@@ -10,11 +10,9 @@ export const WhySection = ({
   WyItemsDesc,
   WyItemsList,
 }: any) => {
-  console.log('WyItemsImg', WyItemsImg);
-
   return (
     <div className="container mt-40">
-      <div className="border-[0.6px] border-woodsmoke-600/50 mb-16"></div>
+      {/* <div className="border-[0.6px] border-woodsmoke-600/50 mb-16"></div> */}
       <div>
         <Text
           small={WyItemsSmallTitle}
