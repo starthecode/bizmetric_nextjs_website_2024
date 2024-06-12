@@ -41,6 +41,9 @@ export const getStaticProps = async (context: any) => {
             id
             title
             excerpt
+            PageUnderConstructionStatus {
+              pageUnderConstruction
+            }
             checkPage {
               checkPageField
               addPageField
@@ -66,13 +69,24 @@ export const getStaticProps = async (context: any) => {
               }
 
               fourthSectionImage {
-                uri
+                mediaItemUrl
               }
               fourthSectionSmallTitle
               fourthSectionMainTitle
               fourthSectionSpecialTitle
               fourthSectionDesc
-              fourthSectionList
+              fourthSectionList {
+                listText
+              }
+              fifthSectionSmallTitle
+              fifthSectionMainTitle
+              fifthSectionListItems {
+                icon {
+                  mediaItemUrl
+                }
+                title
+                listText
+              }
             }
 
             children {
@@ -97,6 +111,9 @@ export const getStaticProps = async (context: any) => {
             excerpt
             content
             date
+            PageUnderConstructionStatus {
+              pageUnderConstruction
+            }
             author {
               node {
                 name
@@ -118,6 +135,9 @@ export const getStaticProps = async (context: any) => {
             id
             title
             excerpt
+            PageUnderConstructionStatus {
+              pageUnderConstruction
+            }
             solutions_field {
               showSolutionVideo
               solutionVideo
@@ -159,8 +179,6 @@ export const getStaticProps = async (context: any) => {
     `,
     variables: { uri }, // Pass the "uri" variable here
   });
-
-  // Your other logic here...
 
   return {
     props: {
